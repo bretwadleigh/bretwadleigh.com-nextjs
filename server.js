@@ -58,9 +58,9 @@ app.prepare().then(() => {
   })
 
   if (dev) {
-    server.listen(3000, err => {
+    server.listen(3003, err => {
       if (err) throw err
-      console.log('> Ready on http://localhost:3000')
+      console.log('> Ready on http://localhost:3003')
     })
   } else {
     server.listen(8080, err => {
