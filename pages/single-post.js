@@ -8,7 +8,7 @@ import { logPageView } from '../utils/analytics'
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
     const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
-    const params = `pdf-page?filter[name]=${id}&fields=title,content,acf`
+    const params = `posts/${id}`
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -20,15 +20,25 @@ export default class extends React.Component {
 
   titleTag (props) {
     if (this.props.data.length > 0) {
-      return `${this.props.data[0].title
-        .rendered} | Bret Wadleigh | Front-End Web Developer`
+      return `${this.props.data.title.rendered} | Bret Wadleigh | Front-End Web Developer`
     }
-    return `Information | Bret Wadleigh | Front-End Web Developer`
+    return `News | Bret Wadleigh | Front-End Web Developer`
+  }
+
+  descriptionTag (props) {
+    if (this.props.data.length > 0) {
+      return `${this.props.data.title.rendered}`
+    }
+    return ` `
   }
 
   render () {
     return (
-      <Layout headerType='interior' title={this.titleTag()}>
+      <Layout
+        headerType='interior'
+        title={this.titleTag()}
+        description={this.descriptionTag()}
+      >
         {this.props.data.length === 0
           ? <Error404 />
           : <main className='single-post'>
@@ -37,24 +47,14 @@ export default class extends React.Component {
             <div className='container'>
               <h1
                 dangerouslySetInnerHTML={{
-                  __html: this.props.data[0].title.rendered
+                  __html: this.props.data.title.rendered
                 }}
                 />
-              {this.props.data[0].acf.pdf_upload
-                  ? <a
-                    style={{ color: '#a61f26' }}
-                    href={this.props.data[0].acf.pdf_upload}
-                    target='_blank'
-                    >
-                      Download PDF Version
-                    </a>
-                  : ''}
-
               <div className='row'>
                 <div
                   className='col s12 flow-text'
                   dangerouslySetInnerHTML={{
-                    __html: this.props.data[0].content.rendered
+                    __html: this.props.data.content.rendered
                   }}
                   />
               </div>

@@ -18,7 +18,7 @@ export const logPageView = () => {
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params = `major-event?filter[name]=${id}&fields=title,content,better_featured_image,acf`
     const res = await fetch(apiUrl + params)
     const data = await res.json()
@@ -33,9 +33,9 @@ export default class extends React.Component {
   titleTag (props) {
     if (this.props.data.length > 0) {
       return `${this.props.data[0].title
-        .rendered} | Catechetical Institute at Franciscan University`
+        .rendered} | Bret Wadleigh | Front-End Web Developer`
     }
-    return `News | Catechetical Institute at Franciscan University`
+    return `News | Bret Wadleigh | Front-End Web Developer`
   }
 
   descriptionTag (props) {

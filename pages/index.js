@@ -11,171 +11,102 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params =
-      'multiple-post-type?per_page=100&type[]=post&type[]=page&type[]=formation-card'
-    const res = await fetch(apiUrl + params)
-    const data = await res.json()
-    return { data }
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
+    const postParams =
+      'posts?filter[posts_per_page]=2'
+    const experienceParams =
+      'experience?filter[orderby]=date&order=asc&per_page=2'
+    const postRes = await fetch(apiUrl + postParams)
+    const posts = await postRes.json()
+    const expRes = await fetch(apiUrl + experienceParams)
+    const experience = await expRes.json()
+    return { posts, experience }
+
   }
 
   componentDidMount () {
-    initTabs()
+    //initTabs()
     logPageView()
   }
 
   render () {
     return (
       <Layout
-        title='Catechetical Institute - Franciscan University'
-        description='The Franciscan University Catechetical Institute forms Catholics who form others in the faith. Through courses, conferences, advice, and resources, the institute supports clergy, parents, and all those responsible for the work of catechesis and evangelization, as they carry out Christ’s command to make disciples of all nations.'
+        title='Bret Wadleigh - Front-End Web Developer'
+        description='Experienced PHP Full-Stack Developer with 10 years of Front-End Development on Java, C# and PHP'
       >
         <main>
-          <Hero />
           <StickyNav />
           <div
-            className='section'
-            style={{ padding: '0', backgroundColor: '#a61f26' }}
-          >
-
-            <JWPlayerVideo videoId='7PVky4jv-A9Xg4ve3' />
-
-          </div>
-
-          <div
-            className='section banner valign-wrapper red-background-flourish'
+            className='section banner valign-wrapper'
             id='banner'
           >
             <div className='valign container'>
               <div className='row center'>
-                <h2 className='light flourish-white white-text'>
-                  <img
-                    src='/static/img/squiggly3-reverse.png'
-                    style={{
-                      marginBottom: '10px',
-                      width: '63px',
-                      marginRight: '8px'
-                    }}
-                  />Formation<img
-                    src='/static/img/squiggly3.png'
-                    style={{
-                      marginBottom: '10px',
-                      width: '63px',
-                      marginLeft: '8px'
-                    }}
-                  />
-                </h2>
+              <div className="card horizontal">
+                <div className="card-image btw-header">
+                  <img src="/static/img/btw-header.jpg" />
+                </div>
+                <div className="card-stacked">
+                <div className="card-content">
+                  <p>Hi, I&apos;m Bret, a Web Developer based in San Francisco, CA. I&apos;m a father of two who enjoys surfing and taking my girls to the beach on my days off.</p>
+                </div>
+                <div className="card-action">
+                  <a href="https://www.linkedin.com/in/bret-wadleigh-28603b2/">Look me up on LinkedIn...</a>
+                </div>
+                </div>
               </div>
+              </div>
+              <div className="divider"></div>
               <div className='row light'>
-                {this.props.data
-                  .filter(post => post.type === 'formation-card')
-                  .map(post =>
-                    <div className='col s12 m6'>
-                      <TextRevealImageCard
-                        cardTitle={post.title.rendered}
-                        cardImg={
-                          post.featured_media !== 0
-                            ? post.better_featured_image.source_url
-                            : ''
-                        }
-                        cardContent={post.content.rendered}
-                        url={post.acf.link}
-                      />
-                    </div>
-                  )}
-
-              </div>
+              <div className="col m6">
+              <div className="card indigo darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">Latest Posts</span>
+                  <ul>
+              {this.props.posts.map(function (post, i) {
+                 return (
+                 <li>
+                 <a className='white-text' href={`/posts/${post.id}`}>{post.title.rendered}</a>
+                 </li>
+                 )
+               })}
+                </ul>
+             </div>
+             <div className="card-action">
+               <a href="/posts" className="btn">
+               <i className="large material-icons right">chevron_right</i>
+               View All Posts
+               </a>
+             </div>
+             </div>
+             </div>
+             <div className="col m6">
+             <div className="card blue-grey darken-1">
+               <div className="card-content white-text">
+                 <span className="card-title">Experience</span>
+                 <ul>
+             {this.props.experience.map(function (exp, i) {
+                return (
+                <li>
+                <a className='white-text' href={`/experience/${exp.id}`}>{exp.title.rendered}</a>
+                </li>
+                )
+              })}
+               </ul>
+            </div>
+            <div className="card-action">
+              <a href="/experience" className="btn">
+              <i className="large material-icons right">chevron_right</i>
+              View All My Experience
+              </a>
+            </div>
+            </div>
+            </div>
+             </div>
             </div>
           </div>
-          <div
-            className='section valign-wrapper white-text black'
-            id='san-damiano'
-            style={{ padding: '0' }}
-          >
-            <div className='valign container'>
-              <div className='row light flow-text'>
-                <div className='col s12 l6' />
-                <div className='col s12 l6'>
-                  {this.props.data
-                    .filter(post => post.slug === 'home-black-banner')
-                    .map(post =>
-                      <blockquote
-                        className='flow-text'
-                        style={{ borderLeft: '5px solid #a61f26' }}
-                        dangerouslySetInnerHTML={{
-                          __html: post.content.rendered
-                        }}
-                        key={post.id}
-                      />
-                    )}
 
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className='section valign-wrapper black-text white-background-flourish'
-            id='news'
-          >
-            <div className='valign container'>
-              <div className='row'>
-                <div className='col s12'>
-                  <ul
-                    className='tabs'
-                    style={{ backgroundColor: 'transparent' }}
-                  >
-                    <li className='tab col s6'>
-                      <a href='#announcements' className='active'>
-                        Announcements
-                      </a>
-                    </li>
-                    <li className='tab col s6'>
-                      <a href='#news-tab'>Newest Additions</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className='row' id='announcements'>
-                {this.props.data
-                  .filter(post => post.type === 'post')
-                  .filter(post => post.acf.type === 'announcement')
-                  .map(post =>
-                    <div className='col s12 m6 l4 xl3' key={post.id}>
-                      <TextCard
-                        title={post.title.rendered}
-                        content={post.acf.excerpt}
-                        url={
-                          post.acf.hasOwnProperty('url')
-                            ? post.acf.url
-                            : `/news/${post.slug}`
-                        }
-                      />
-                    </div>
-                  )}
-
-              </div>
-              <div className='row' id='news-tab'>
-                {this.props.data
-                  .filter(post => post.type === 'post')
-                  .filter(post => post.acf.type === 'news')
-                  .map(post =>
-                    <div className='col s12 m6 l4 xl3' key={post.id}>
-                      <TextCard
-                        title={post.title.rendered}
-                        content={post.acf.excerpt}
-                        url={
-                          post.acf.hasOwnProperty('url')
-                            ? post.acf.url
-                            : `/news/${post.slug}`
-                        }
-                      />
-                    </div>
-                  )}
-
-              </div>
-            </div>
-          </div>
           <style jsx>{`
             @media screen and (max-width: 500px) {
               h2 img {
@@ -196,6 +127,18 @@ export default class extends React.Component {
             }
             .tab a {
               font-size: 18px;
+            }
+            .btw-header {
+              overflow: hidden;
+            }
+            .btw-header img {
+              top: -50px;
+            }
+            .card.horizontal {
+              max-height: 200px;
+            }
+            .card.horizontal .card-content p {
+              padding: 15px 25px 20px;
             }
           `}</style>
         </main>

@@ -7,7 +7,7 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params = 'multiple-post-type?per_page=100&type[]=pdf-page&type[]=page'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
@@ -22,7 +22,7 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='About | Catechetical Institute at Franciscan University'
+        title='About | Bret Wadleigh | Front-End Web Developer'
         description='The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis.'
       >
         <main id='about'>

@@ -22,7 +22,7 @@ export default class extends React.Component {
   }
 
   static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params =
       'multiple-post-type?per_page=100&type[]=resource&fields=title,acf,better_featured_image,date,resource-category,type,content,slug,id&type[]=page'
     const res = await fetch(apiUrl + params)
@@ -45,7 +45,7 @@ export default class extends React.Component {
   }
 
   getCategories = () => {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params = `resource-category`
     getJSON(apiUrl + params).then(categories => this.setState({ categories }))
   }
@@ -55,7 +55,7 @@ export default class extends React.Component {
    * Render cards from api data
    */
   fetchSearchTerm = searchTerm => {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
     getJSON(apiUrl + params).then(data => this.setState({ data }))
   }
@@ -136,7 +136,7 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='Resources | Catechetical Institute at Franciscan University'
+        title='Resources | Bret Wadleigh | Front-End Web Developer'
         description='Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators.'
       >
         <main id='resources'>

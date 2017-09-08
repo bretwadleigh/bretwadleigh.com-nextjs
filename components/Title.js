@@ -7,11 +7,8 @@ class Title extends Component {
         <h1 className='center light valign'>{this.props.title}</h1>
         <style jsx>{`
           h1 {
-            background-image: url(/static/img/squiggly1.png);
-            background-repeat: no-repeat;
-            background-position: 50% 69px;
             margin: 0 auto;
-            font-size: 50px;
+            font-size: 4rem;
             padding: 16px 0 19px 0;
           }
           @media screen and (max-width: 799px) {
@@ -22,25 +19,12 @@ class Title extends Component {
           }
           @media screen and (min-width: 800px) {
             .interior-page-title {
-              background-size: cover;
-              background-repeat: no-repeat;
-              background-position: center;
-              background-image: url(/static/img/campus-11.jpg);
-              background-position-y: 97%;
-              min-height: 39vh;
+
             }
             h1 {
-              background-image: url(/static/img/squiggly1.png),
-                linear-gradient(
-                  rgba(255, 255, 255, 0.75),
-                  rgba(255, 255, 255, 0.75)
-                );
-              background-repeat: no-repeat;
-              background-position: 50% 85px, 50%;
-              border-radius: 50%;
               margin: 0 auto;
-              font-size: 54px;
-              padding: 35px;
+              font-size: 4rem;
+              padding: 35px 35px 0 35px;
             }
           }
         `}</style>

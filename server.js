@@ -26,22 +26,22 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/')
   })
 
-  server.get('/events', (req, res) => {
-    renderAndCache(req, res, '/events')
+  //server.get('/events', (req, res) => {
+  //  renderAndCache(req, res, '/events')
+  //})
+
+  //server.get('/events/:id', (req, res) => {
+  //  const queryParams = { id: req.params.id }
+  //  renderAndCache(req, res, '/single-event', queryParams)
+  //})
+
+  server.get('/posts', (req, res) => {
+    renderAndCache(req, res, '/posts')
   })
 
-  server.get('/events/:id', (req, res) => {
+  server.get('/posts/:id', (req, res) => {
     const queryParams = { id: req.params.id }
-    renderAndCache(req, res, '/single-event', queryParams)
-  })
-
-  server.get('/news', (req, res) => {
-    renderAndCache(req, res, '/news')
-  })
-
-  server.get('/news/:id', (req, res) => {
-    const queryParams = { id: req.params.id }
-    renderAndCache(req, res, '/single-news', queryParams)
+    renderAndCache(req, res, '/single-post', queryParams)
   })
 
   server.get('/i/:id', (req, res) => {

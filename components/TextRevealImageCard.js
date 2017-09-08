@@ -42,7 +42,7 @@ class TextRevealImageCard extends Component {
             pointer-events: none;
           }
           .card-title {
-            font-family: 'Cinzel', serif;
+            font-family: 'Roboto', serif;
             padding-bottom: 0;
             font-size: 28px;
           }

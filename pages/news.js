@@ -8,7 +8,7 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params = 'posts'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
@@ -23,7 +23,7 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='News | Catechetical Institute at Franciscan University'
+        title='News | Bret Wadleigh | Front-End Web Developer'
         description='The latest news and announcements from the Catechetical Institute at Franciscan University of Steubenville.'
       >
         <main id='news'>

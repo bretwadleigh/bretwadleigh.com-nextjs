@@ -5,12 +5,12 @@ const Blog = props =>
     <div className='col s12'>
       {props.homepageOnly
         ? <a href={props.url}>
-          <h3 style={{ marginBottom: '0', color: '#8e1b21' }}>
+          <h3 style={{ marginBottom: '0', color: '#6AA374' }}>
             {props.title}
           </h3>
         </a>
-        : <a href={`/news/${props.slug}`}>
-          <h3 style={{ marginBottom: '0', color: '#8e1b21' }}>
+        : <a href={`/posts/${props.id}`}>
+          <h3 style={{ marginBottom: '0', color: '#6AA374' }}>
             {props.title}
           </h3>
         </a>}
@@ -24,7 +24,7 @@ const Blog = props =>
       />
     </div>
     {!props.homepageOnly &&
-      <a href={`/news/${props.slug}`}>
+      <a href={`/posts/${props.id}`}>
         <span class='more-link'>Read More</span>
       </a>}
 
@@ -38,6 +38,9 @@ const Blog = props =>
         }
         span.more-link {
           padding-left: 16px;
+        }
+        p.link-more {
+          display: none !important;
         }
       `}
 

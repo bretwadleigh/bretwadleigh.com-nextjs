@@ -5,7 +5,7 @@ import OutLink from '../components/OutLink'
 
 class Nav extends Component {
   componentDidMount () {
-    initSideNav()
+    //initSideNav()
   }
 
   render () {
@@ -14,20 +14,12 @@ class Nav extends Component {
         <div>
           <nav className='main-nav search-nav'>
             <div className='nav-wrapper'>
-              <OutLink
-                className='fus-branding'
-                label='toMainSiteBrandingLink'
-                to='https://www.franciscan.edu'
-                title='Franciscan University of Steubenville'
-              >
-                Franciscan University of Steubenville
-              </OutLink>
-
               <a href='/' className='brand-logo'>
-
-                <img src='/static/img/ci-logo.png' />
+                <img src='/static/img/logo-btw.png' />
               </a>
-
+              <span className="headerText">
+              Bret Wadleigh - Front-End Web Developer
+              </span>
               <a
                 href='#'
                 data-activates='mobile-demo'
@@ -50,27 +42,17 @@ class Nav extends Component {
         <ul className='side-nav' id='mobile-demo' style={{ width: '300px' }}>
           <li className='logo'>
             <a href='/' className='brand-logo'>
-
-              <img src='/static/img/ci-logo.png' />
+              <img src='/static/img/btw-logo.png' />
             </a>
-
           </li>
           <li>
-            {' '}<Link prefetch href='/about'><a>About</a></Link>{' '}
+            {' '}<Link prefetch href='/experience'><a>Experience</a></Link>{' '}
           </li>
           <li>
-            {' '}<Link prefetch href='/team'><a>Team</a></Link>{' '}
+            {' '}<Link prefetch href='/education'><a>Education</a></Link>{' '}
           </li>
-          <li>
-            {' '}<Link prefetch href='/courses'><a>Courses</a></Link>{' '}
-          </li>
-          <li>
-            {' '}<Link prefetch href='/events'><a>Events</a></Link>{' '}
-          </li>
-          <li>
-            {' '}<Link prefetch href='/resources'><a>Resources</a></Link>{' '}
-          </li>
-          <li><Link prefetch href='/news' title='News'><a>News</a></Link></li>
+          <li><Link prefetch href='/posts' title='Posts'><a>Posts</a></Link></li>
+          <li><Link prefetch href='/portfolio' title='Portfolio'><a>Portfolio</a></Link></li>
         </ul>
         <style jsx>{`
           @media screen and (max-width: 992px) {

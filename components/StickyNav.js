@@ -11,26 +11,10 @@ class StickyNav extends Component {
     return (
       <div className='section bottom-nav'>
         <ul className='hide-on-med-and-down'>
-          <li>
-            <Link prefetch href='/about' title='About'><a>About</a></Link>
-          </li>
-          <li><Link prefetch href='/team' title='Team'><a>Team</a></Link></li>
-          <li>
-            <Link prefetch href='/courses' title='Courses'><a>Courses</a></Link>
-          </li>
-          <li>
-            <Link prefetch href='/events' title='Events'><a>Events</a></Link>
-          </li>
-          <li>
-            <Link prefetch href='/resources' title='Resources'>
-              <a>Resources</a>
-            </Link>
-          </li>
-          <li>
-            <Link prefetch href='/news' title='News'>
-              <a>News</a>
-            </Link>
-          </li>
+          <li><Link prefetch href='/experience' title='Experience'><a>Experience</a></Link></li>
+          <li><Link prefetch href='/education' title='Education'><a>Education</a></Link></li>
+          <li><Link prefetch href='/posts' title='Posts'><a>Posts</a></Link> </li>
+          <li><Link prefetch href='/portfolio' title='Portfolio'><a>Portfolio</a></Link></li>
         </ul>
         <style jsx>
           {`
@@ -43,7 +27,7 @@ class StickyNav extends Component {
               color: #fff;
               text-transform: uppercase;
               font-size: 22px;
-              font-family: 'Cinzel', serif;
+              font-family: 'Roboto', serif;
               cursor: pointer;
               padding: 6px 12px 7px 12px;
               line-height: 19px;
@@ -51,7 +35,7 @@ class StickyNav extends Component {
               font-weight: 600;
             }
             .bottom-nav ul li a:hover {
-              background-color: hsla(357, 68%, 28%, 1);
+              background-color: #9DA5E0;
             }
           `}
         </style>

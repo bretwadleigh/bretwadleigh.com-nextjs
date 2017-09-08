@@ -13,137 +13,90 @@ class Footer extends Component {
       <footer className='page-footer'>
         <div className='container'>
           <div className='row white-text'>
-            <div className='col s12 m3'>
+            <div className='col s12 m6'>
               <h5 className='light'>Contact</h5>
               <address>
                 <p typeof='schema:PostalAddress'>
                   <span property='schema:streetAddress'>
-                    1235 University Boulevard
+                    217 14th Ave.
                   </span>
                   <br />
                   <span property='schema:addressLocality'>
-                    Steubenville
+                    San Francisco
                   </span>,{' '}
-                  <abbr title='Ohio' property='schema:addressRegion'>
-                    OH
+                  <abbr title='California' property='schema:addressRegion'>
+                    CA
                   </abbr>{' '}
-                  <span property='schema:postalCode'>43952</span>{' '}
+                  <span property='schema:postalCode'>94118</span>{' '}
                   <abbr property='schema:addressCountry'>USA</abbr><br />
                   <a
-                    href='tel:+17402836754'
+                    href='tel:+14153785426'
                     property='telephone'
                     className='white-text'
                   >
-                    740.283.6754
+                    415 378 5426
                   </a>
                   <br />
                   <a
-                    href='mailto:ci@franciscan.edu'
+                    href='mailto:bretwadleigh@yahoo.com'
                     property='email'
                     className='white-text'
                   >
-                    ci@franciscan.edu
+                    bretwadleigh@yahoo.com
                   </a>
                 </p>
               </address>
             </div>
             <div className='col s12 m6'>
-              <h5 className='light'>About the Catechetical Institute</h5>
+              <h5 className='light'>About This Site</h5>
               <p>
-                The Catechetical Institute at Franciscan University exists to
-                train and support the key catechists in any situation—priests,
-                deacons, parents, or laity, whether professional or volunteer.
-                Through conferences, online workshops, videos, audio, personal
-                mentorship, and a wealth of resources produced by Franciscan
-                University, all involved in the work of catechesis will find new
-                ideas, new approaches, new techniques, and a new confidence to
-                do the work of catechesis.
+                <span>This site uses </span>
+                <OutLink
+                label='NextJS'
+                to='https://github.com/zeit/next.js/'
+                title='NextJs'
+                >
+                NextJs
+                </OutLink>
+                <span> - a Framework for server-rendered React apps, and </span>
+                <OutLink
+                label='MaterializeCSS'
+                to='http://materializecss.com/'
+                title='Materialize.css'
+                >
+                materialize&#46;css
+                </OutLink>
+                 <span>, a CSS Framework based on </span>
+                 <OutLink
+                 label='MaterialDesign'
+                 to='https://material.io/'
+                 title='Material Design'
+                 >
+                 Material Design
+                 </OutLink>
+                 <span>. The backend utilizes WP API, the WordPress REST API built into the latest versions of WordPress. </span>
               </p>
-            </div>
-            <div className='col s12 m3'>
-              <h5 className='light'>Related Links</h5>
-              <ul>
-                {/*  <li><a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank">Franciscan at Home</a></li> */}
-                <li>
-                  <OutLink
-                    label='toMainSiteFooterLink'
-                    to='https://www.franciscan.edu/'
-                    title='Franciscan University of Steubenville'
-                  >
-                    Franciscan University
-                  </OutLink>
-                </li>
-                <li>
-                  <a
-                    href='https://www.steubenvilleconferences.com/'
-                    title='Steubenville Conferences'
-                    target='_blank'
-                  >
-                    Steubenville Conferences
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://www.franciscan.edu/veritas'
-                    title='Veritas Center'
-                    target='_blank'
-                  >
-                    Veritas Center for Ethics in Public Life
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='http://www.faithandreason.com/'
-                    title='Faith and Reason'
-                    target='_blank'
-                  >
-                    Faith and Reason
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://review.catechetics.com/'
-                    title='The Catechetical Review'
-                    target='_blank'
-                  >
-                    The Catechetical Review
-                  </a>
-                </li>
-                <li style={{ marginTop: '8px' }}>
-                  <a
-                    href='https://giving.franciscan.edu/'
-                    title='Donate'
-                    target='_blank'
-                  >
-                    <button className='btn waves-effect waves-light btn-inverted-white'>
-                      Donate
-                    </button>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-              <a
-                href='https://www.franciscan.edu/ferpa/'
-                title='Privacy Policy'
-                target='_blank'
-              >
-                Privacy Policy
-              </a>
-              <a
-                href='https://www.franciscan.edu/consumer-information/non-discrimination/'
-                title='Nondiscrimination Statement'
-                target='_blank'
-              >
-                Nondiscrimination Statement
-              </a>
+            Shapes graphic by <a href="http://www.flaticon.com/authors/freepik">freepik</a>
+            from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under
+            <a
+            href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0">
+            CC BY 3.0
+            </a>.
+            Check out the new logo that I created on
+            <a
+            href="http://logomakr.com"
+            title="Logo Maker">
+            LogoMaker.com
+            </a>
             </div>
-            © <span id='copyright-date'>{this.currentYear()}</span> Franciscan
-            University of Steubenville
+            © <span id='copyright-date'>{this.currentYear()}</span> bretwadleigh.com
           </div>
           <a
             className='hide-on-med-and-down'

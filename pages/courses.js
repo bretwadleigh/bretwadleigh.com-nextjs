@@ -9,7 +9,7 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
     const params =
       'multiple-post-type?per_page=100&type[]=page&type[]=track&type[]=program'
     const res = await fetch(apiUrl + params)
@@ -26,7 +26,7 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='Courses | Catechetical Institute at Franciscan University'
+        title='Courses | Bret Wadleigh | Front-End Web Developer'
         description='There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville.'
       >
         <main id='courses'>
