@@ -5,7 +5,7 @@ import OutLink from '../components/OutLink'
 
 class Nav extends Component {
   componentDidMount () {
-    //initSideNav()
+    initSideNav()
   }
 
   render () {
@@ -17,8 +17,12 @@ class Nav extends Component {
               <a href='/' className='brand-logo'>
                 <img src='/static/img/logo-btw.png' />
               </a>
-              <span className="headerText">
-              Bret Wadleigh - Front-End Web Developer
+              <span className='headerText'>
+                Bret Wadleigh -
+                <span className='hide-on-small-only'>
+                Front-End
+                </span>
+                Web Developer
               </span>
               <a
                 href='#'
@@ -27,7 +31,7 @@ class Nav extends Component {
               >
                 <svg
                   viewBox='0 0 24 24'
-                  fill='#fff'
+                  fill='#000'
                   height='24'
                   width='24'
                   xmlns='http://www.w3.org/2000/svg'
@@ -42,7 +46,7 @@ class Nav extends Component {
         <ul className='side-nav' id='mobile-demo' style={{ width: '300px' }}>
           <li className='logo'>
             <a href='/' className='brand-logo'>
-              <img src='/static/img/btw-logo.png' />
+              <img src='/static/img/logo-btw.png' />
             </a>
           </li>
           <li>
@@ -51,8 +55,14 @@ class Nav extends Component {
           <li>
             {' '}<Link prefetch href='/education'><a>Education</a></Link>{' '}
           </li>
-          <li><Link prefetch href='/posts' title='Posts'><a>Posts</a></Link></li>
-          <li><Link prefetch href='/portfolio' title='Portfolio'><a>Portfolio</a></Link></li>
+          <li>
+            <Link prefetch href='/posts' title='Posts'><a>Posts</a></Link>
+          </li>
+          <li>
+            <Link prefetch href='/portfolio' title='Portfolio'>
+              <a>Portfolio</a>
+            </Link>
+          </li>
         </ul>
         <style jsx>{`
           @media screen and (max-width: 992px) {
@@ -66,9 +76,16 @@ class Nav extends Component {
             }
             nav .brand-logo {
               margin-top: 11px;
+              display: none;
             }
             nav .button-collapse {
               margin-top: 14px;
+            }
+            nav .headerText {
+              top: 34px;
+              left: 60px;
+              font-size: 1em;
+              line-height: 1.1em;
             }
           }
           @media screen and (max-width: 992px), screen and (max-height: 500px) {
@@ -79,12 +96,12 @@ class Nav extends Component {
           }
           .side-nav .logo {
             height: 100px;
-            background-color: #000;
-            border-bottom: 2px solid #8e1b21;
+            background-color: #fff;
+            border-bottom: 2px solid #78AFCE;
             text-align: center;
           }
           .side-nav .logo a:hover {
-            background-color: #000;
+            background-color: #fff;
           }
           .side-nav .logo img {
             width: auto;

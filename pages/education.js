@@ -2,14 +2,14 @@ import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
-import Exp from '../components/Exp'
+import Edu from '../components/Edu'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
-    const params = 'experience?filter[orderby]=date&order=asc&_embed'
+    const apiUrl = 'http://bretwadleigh.com/data/wp-json/wp/v2/'
+    const params = 'education?filter[orderby]=date&order=asc&_embed'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -23,13 +23,13 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='Experience | Bret Wadleigh | Front-End Web Developer'
-        description='Bret Wadleigh&quot;s Work Experience'
+        title='Educaton | Bret Wadleigh | Front-End Web Developer'
+        description='Bret Wadleigh&quot;s Education'
       >
-        <main id='experience'>
+        <main id='education'>
           <StickyNav />
           <Title
-            title='Experience'
+            title='Education'
             imgPath='/static/img/campus-11.jpg'
             posY='-44vh'
           />
@@ -37,14 +37,16 @@ export default class extends React.Component {
             <div className='section'>
               {this.props.data.map(function (post, i) {
                 return (
-                  <Exp
+                  <Edu
                     slug={post.slug}
                     id={post.id}
                     title={post.title.rendered}
                     content={post.content.rendered}
                     excerpt={post.excerpt.rendered}
                     date={new Date(post.date)}
-                    imageId={post.featured_media}
+                    image={post._embedded['wp:featuredmedia'][0]}
+                    // homepageOnly={post.acf.homepage_only}
+                    // url={post.acf.url}
                     key={i}
                   />
                 )

@@ -1,38 +1,22 @@
 import React from 'react'
 
-function getImage(obj) {
-  console.log(obj)
-  const url = 'http://bretwadleigh-data.local/wp-content/uploads/2017/09/exp-marin-software-100x50.png'
-  return { url }
-}
-
-const Exp = props =>
+const Edu = props =>
   <div className='row' key={props.i}>
     <div className='col s2 featured-image-cell'>
     <img className='featureImage'
-    data-imageid={props.imageId}
-    id={`fi_${props.imageId}`}
+    src={props.image.source_url}
     />
     </div>
     <div className='col s10'>
-      <a href={`/experience/${props.id}`}>
         <h3 style={{ marginBottom: '0', color: '#9DA5E0' }}>
           {props.title}
         </h3>
-      </a>
       <div
         className='flow-text'
         dangerouslySetInnerHTML={{
           __html: props.excerpt
         }}
       />
-      <a
-        className='btn waves-effect waves-light'
-        href={`/experience/${props.id}`}
-      >
-        <i className='large material-icons right'>chevron_right</i>
-        <span>Read More</span>
-      </a>
     </div>
 
     <style jsx>
@@ -45,6 +29,9 @@ const Exp = props =>
         span.more-link {
           padding-left: 16px;
         }
+        .featured-image-cell img {
+          width: 100%;
+        }
         @media screen and (max-width: 600px) {
           h3 {
             font-size: 2rem;
@@ -55,4 +42,4 @@ const Exp = props =>
     </style>
   </div>
 
-export default Exp
+export default Edu

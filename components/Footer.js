@@ -52,29 +52,32 @@ class Footer extends Component {
               <p>
                 <span>This site uses </span>
                 <OutLink
-                label='NextJS'
-                to='https://github.com/zeit/next.js/'
-                title='NextJs'
+                  label='NextJS'
+                  to='https://github.com/zeit/next.js/'
+                  title='NextJs'
                 >
-                NextJs
+                  NextJs
                 </OutLink>
                 <span> - a Framework for server-rendered React apps, and </span>
                 <OutLink
-                label='MaterializeCSS'
-                to='http://materializecss.com/'
-                title='Materialize.css'
+                  label='MaterializeCSS'
+                  to='http://materializecss.com/'
+                  title='Materialize.css'
                 >
-                materialize&#46;css
+                  materialize&#46;css
                 </OutLink>
-                 <span>, a CSS Framework based on </span>
-                 <OutLink
-                 label='MaterialDesign'
-                 to='https://material.io/'
-                 title='Material Design'
-                 >
-                 Material Design
-                 </OutLink>
-                 <span>. The backend utilizes WP API, the WordPress REST API built into the latest versions of WordPress. </span>
+                <span>, a CSS Framework based on </span>
+                <OutLink
+                  label='MaterialDesign'
+                  to='https://material.io/'
+                  title='Material Design'
+                >
+                  Material Design
+                </OutLink>
+                <span>
+                  . The backend utilizes WP API, the WordPress REST API built
+                  into the latest versions of WordPress.{' '}
+                </span>
               </p>
             </div>
           </div>
@@ -82,37 +85,32 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-            Shapes graphic by <a href="http://www.flaticon.com/authors/freepik">freepik</a>
-            from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under
-            <a
-            href="http://creativecommons.org/licenses/by/3.0/"
-            title="Creative Commons BY 3.0">
-            CC BY 3.0
-            </a>.
-            Check out the new logo that I created on
-            <a
-            href="http://logomakr.com"
-            title="Logo Maker">
-            LogoMaker.com
-            </a>
+              Shapes graphic by{' '}
+              <a href='http://www.flaticon.com/authors/freepik'>freepik</a>
+              from <a href='http://www.flaticon.com/'>Flaticon</a> is licensed
+              under
+              <a
+                href='http://creativecommons.org/licenses/by/3.0/'
+                title='Creative Commons BY 3.0'
+              >
+                CC BY 3.0
+              </a>.
+              Check out the new logo that I created on
+              <a href='http://logomakr.com' title='Logo Maker'>
+                LogoMaker.com
+              </a>
             </div>
-            © <span id='copyright-date'>{this.currentYear()}</span> bretwadleigh.com
+            © <span id='copyright-date'>{this.currentYear()}</span>{' '}
+            bretwadleigh.com
           </div>
+
           <a
             className='hide-on-med-and-down'
-            href='https://www.franciscan.edu/ferpa/'
-            title='Privacy Policy'
+            href='https://github.com/bretwadleigh/bretwadleigh.com-nextjs'
+            title='This Site on Github'
             target='_blank'
           >
-            Privacy Policy
-          </a>
-          <a
-            className='hide-on-med-and-down'
-            href='https://www.franciscan.edu/consumer-information/non-discrimination/'
-            title='Nondiscrimination Statement'
-            target='_blank'
-          >
-            Nondiscrimination Statement
+            This Site on Github
           </a>
         </div>
         <script

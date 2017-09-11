@@ -11,10 +11,24 @@ class StickyNav extends Component {
     return (
       <div className='section bottom-nav'>
         <ul className='hide-on-med-and-down'>
-          <li><Link prefetch href='/experience' title='Experience'><a>Experience</a></Link></li>
-          <li><Link prefetch href='/education' title='Education'><a>Education</a></Link></li>
-          <li><Link prefetch href='/posts' title='Posts'><a>Posts</a></Link> </li>
-          <li><Link prefetch href='/portfolio' title='Portfolio'><a>Portfolio</a></Link></li>
+          <li>
+            <Link prefetch href='/experience' title='Experience'>
+              <a>Experience</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/education' title='Education'>
+              <a>Education</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/posts' title='Posts'><a>Posts</a></Link>{' '}
+          </li>
+          <li>
+            <Link prefetch href='/portfolio' title='Portfolio'>
+              <a>Portfolio</a>
+            </Link>
+          </li>
         </ul>
         <style jsx>
           {`

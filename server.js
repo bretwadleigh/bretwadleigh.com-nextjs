@@ -26,14 +26,14 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/')
   })
 
-  //server.get('/events', (req, res) => {
+  // server.get('/events', (req, res) => {
   //  renderAndCache(req, res, '/events')
-  //})
+  // })
 
-  //server.get('/events/:id', (req, res) => {
+  // server.get('/events/:id', (req, res) => {
   //  const queryParams = { id: req.params.id }
   //  renderAndCache(req, res, '/single-event', queryParams)
-  //})
+  // })
 
   server.get('/posts', (req, res) => {
     renderAndCache(req, res, '/posts')
@@ -42,6 +42,15 @@ app.prepare().then(() => {
   server.get('/posts/:id', (req, res) => {
     const queryParams = { id: req.params.id }
     renderAndCache(req, res, '/single-post', queryParams)
+  })
+
+  server.get('/experience', (req, res) => {
+    renderAndCache(req, res, '/experience')
+  })
+
+  server.get('/experience/:id', (req, res) => {
+    const queryParams = { id: req.params.id }
+    renderAndCache(req, res, '/single-exp', queryParams)
   })
 
   server.get('/i/:id', (req, res) => {

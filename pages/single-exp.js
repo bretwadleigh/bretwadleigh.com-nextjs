@@ -7,8 +7,8 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = `posts?filter[name]=${id}&fields=title,featured_media,better_featured_image,categories,tags,id,excerpt,content,acf,pure_taxonomies`
+    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
+    const params = `experience/${id}`
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -20,15 +20,15 @@ export default class extends React.Component {
 
   titleTag (props) {
     if (this.props.data.length > 0) {
-      return `${this.props.data[0].title
-        .rendered} | Catechetical Institute at Franciscan University`
+      return `${this.props.data.title
+        .rendered} | Bret Wadleigh | Front-End Web Developer`
     }
-    return `News | Catechetical Institute at Franciscan University`
+    return `News | Bret Wadleigh | Front-End Web Developer`
   }
 
   descriptionTag (props) {
     if (this.props.data.length > 0) {
-      return `${this.props.data[0].acf.seo_description}`
+      return `${this.props.data.title.rendered}`
     }
     return ` `
   }
@@ -45,19 +45,23 @@ export default class extends React.Component {
           : <main className='single-post'>
             <StickyNav />
 
-            <div className='container'>
+            <div className='container single-experience'>
               <h1
                 dangerouslySetInnerHTML={{
-                  __html: this.props.data[0].title.rendered
+                  __html: this.props.data.title.rendered
                 }}
                 />
               <div className='row'>
                 <div
                   className='col s12 flow-text'
                   dangerouslySetInnerHTML={{
-                    __html: this.props.data[0].content.rendered
+                    __html: this.props.data.content.rendered
                   }}
                   />
+                  <a className='btn' href="/experience">
+                  <i className='large material-icons left'>chevron_left</i>
+                  <span>Back to My Experience List</span>
+                  </a>
               </div>
             </div>
           </main>}

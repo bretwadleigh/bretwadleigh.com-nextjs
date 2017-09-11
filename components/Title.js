@@ -13,13 +13,13 @@ class Title extends Component {
           }
           @media screen and (max-width: 799px) {
             h1 {
+              font-size: 2rem;
               margin-bottom: -19px;
               background-size: 90px;
             }
           }
           @media screen and (min-width: 800px) {
             .interior-page-title {
-
             }
             h1 {
               margin: 0 auto;

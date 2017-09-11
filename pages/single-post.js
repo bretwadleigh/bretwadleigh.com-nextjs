@@ -20,7 +20,8 @@ export default class extends React.Component {
 
   titleTag (props) {
     if (this.props.data.length > 0) {
-      return `${this.props.data.title.rendered} | Bret Wadleigh | Front-End Web Developer`
+      return `${this.props.data.title
+        .rendered} | Bret Wadleigh | Front-End Web Developer`
     }
     return `News | Bret Wadleigh | Front-End Web Developer`
   }

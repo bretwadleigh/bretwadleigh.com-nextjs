@@ -24,23 +24,29 @@ const Blog = props =>
       />
     </div>
     {!props.homepageOnly &&
-      <a href={`/posts/${props.id}`}>
-        <span class='more-link'>Read More</span>
+      <a className='btn' href={`/posts/${props.id}`}>
+      <i className='large material-icons right'>chevron_right</i>
+        <span className='white-text'>Read More</span>
       </a>}
 
     <style jsx>
       {`
         span {
           color: #998643;
-          padding-left: 6px;
+
           margin-bottom: 8px;
-          display: block;
+
         }
         span.more-link {
           padding-left: 16px;
         }
         p.link-more {
           display: none !important;
+        }
+        @media screen and (max-width: 600px) {
+          h3 {
+            font-size: 2rem;
+          }
         }
       `}
 
