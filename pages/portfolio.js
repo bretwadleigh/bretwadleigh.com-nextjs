@@ -38,6 +38,8 @@ export default class extends React.Component {
                 {this.props.data
                   //.filter(post => post.slug === 'about-intro')
                   .map(post =>
+                    <div>
+                    <h2 style={{align:'center',fontSize: '2em'}}>{`${post.title.rendered}:`}</h2>
                     <div
                       key={post.id}
                       className='col s12 valign flow-text'
@@ -45,6 +47,7 @@ export default class extends React.Component {
                         __html: post.content.rendered
                       }}
                     />
+                    </div>
                   )}
 
               </div>
