@@ -18,7 +18,7 @@ export const logPageView = () => {
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
-    const apiUrl = 'http://bretwadleigh-data.local/wp-json/wp/v2/'
+    const apiUrl = 'http://bretwadleigh.com/data/wp-json/wp/v2/'
     const params = `major-event?filter[name]=${id}&fields=title,content,better_featured_image,acf`
     const res = await fetch(apiUrl + params)
     const data = await res.json()
