@@ -25,7 +25,7 @@ const Blog = props =>
     </div>
     {!props.homepageOnly &&
       <a className='btn' href={`/posts/${props.id}`}>
-      <i className='large material-icons right'>chevron_right</i>
+        <i className='large material-icons right'>chevron_right</i>
         <span className='white-text'>Read More</span>
       </a>}
 
@@ -33,9 +33,7 @@ const Blog = props =>
       {`
         span {
           color: #998643;
-
           margin-bottom: 8px;
-
         }
         span.more-link {
           padding-left: 16px;

@@ -1,18 +1,20 @@
 import React from 'react'
 
-function getImage(obj) {
+function getImage (obj) {
   console.log(obj)
-  const url = 'http://bretwadleigh-data.local/wp-content/uploads/2017/09/exp-marin-software-100x50.png'
+  const url =
+    'http://bretwadleigh-data.local/wp-content/uploads/2017/09/exp-marin-software-100x50.png'
   return { url }
 }
 
 const Exp = props =>
   <div className='row' key={props.i}>
     <div className='col s2 featured-image-cell'>
-    <img className='featureImage'
-    data-imageid={props.imageId}
-    id={`fi_${props.imageId}`}
-    />
+      <img
+        className='featureImage'
+        data-imageid={props.imageId}
+        id={`fi_${props.imageId}`}
+      />
     </div>
     <div className='col s10'>
       <a href={`/experience/${props.id}`}>

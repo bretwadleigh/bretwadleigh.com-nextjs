@@ -27,7 +27,7 @@ export default class extends React.Component {
   render () {
     return (
       <Layout
-      headerType='interior'
+        headerType='interior'
         title='Bret Wadleigh - Front-End Web Developer'
         description='Experienced PHP Full-Stack Developer with 10 years of Front-End Development on Java, C# and PHP'
       >
@@ -36,30 +36,34 @@ export default class extends React.Component {
           <div className='section banner valign-wrapper' id='banner'>
             <div className='valign container'>
               <div className='row center'>
-              <div className='col m12 hide-on-small-only'>
-                <div className='card horizontal'>
-                  <div className='card-image btw-header'>
-                    <img src='/static/img/btw-header.jpg' />
-                  </div>
-                  <div className='card-stacked'>
-                    <div className='card-content'>
-                      <p>
-                        Hi, I&apos;m Bret, a Web Developer based in San
-                        Francisco, CA. I&apos;m a father of two who enjoys
-                        surfing and taking my girls to the beach on my days off.
-                      </p>
+                <div className='col m12 hide-on-small-only'>
+                  <div className='card horizontal'>
+                    <div className='card-image btw-header'>
+                      <img src='/static/img/btw-header.jpg' />
                     </div>
-                    <div className='card-action'>
-                      <a className='btn amber' href='https://www.linkedin.com/in/bret-wadleigh-28603b2/'>
-                        <i className='large material-icons right'>
-                        person_add
-                        </i>
-                        <span>Look me up on LinkedIn</span>
-                      </a>
+                    <div className='card-stacked'>
+                      <div className='card-content'>
+                        <p>
+                          Hi, I&apos;m Bret, a Web Developer based in San
+                          Francisco, CA. I&apos;m a father of two who enjoys
+                          surfing and taking my girls to the beach on my days
+                          off.
+                        </p>
+                      </div>
+                      <div className='card-action'>
+                        <a
+                          className='btn amber'
+                          href='https://www.linkedin.com/in/bret-wadleigh-28603b2/'
+                        >
+                          <i className='large material-icons right'>
+                            person_add
+                          </i>
+                          <span>Look me up on LinkedIn</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
               <div className='divider' />
               <div className='row light'>
@@ -100,8 +104,10 @@ export default class extends React.Component {
                         {this.props.experience.map(function (exp, i) {
                           return (
                             <li>
-                              <a className='white-text'
-                                href={`/experience/${exp.id}`}>
+                              <a
+                                className='white-text'
+                                href={`/experience/${exp.id}`}
+                              >
                                 {exp.title.rendered}
                               </a>
                             </li>
@@ -115,7 +121,9 @@ export default class extends React.Component {
                           chevron_right
                         </i>
                         <span>View All</span>
-                        <span className='hide-on-small-only'>My Experience</span>
+                        <span className='hide-on-small-only'>
+                          My Experience
+                        </span>
                       </a>
                     </div>
                   </div>

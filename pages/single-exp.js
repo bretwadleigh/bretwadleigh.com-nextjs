@@ -58,10 +58,10 @@ export default class extends React.Component {
                     __html: this.props.data.content.rendered
                   }}
                   />
-                  <a className='btn' href="/experience">
+                <a className='btn' href='/experience'>
                   <i className='large material-icons left'>chevron_left</i>
                   <span>Back to My Experience List</span>
-                  </a>
+                </a>
               </div>
             </div>
           </main>}

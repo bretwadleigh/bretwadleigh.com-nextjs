@@ -20,7 +20,7 @@ class Nav extends Component {
               <span className='headerText'>
                 Bret Wadleigh -
                 <span className='hide-on-small-only'>
-                Front-End
+                  Front-End
                 </span>
                 Web Developer
               </span>
