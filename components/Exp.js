@@ -14,7 +14,7 @@ const Exp = props =>
         className='featureImage'
         data-imageid={props.imageId}
         id={`fi_${props.imageId}`}
-        style={{marginTop: '1.46rem'}}
+        style={{ marginTop: '1.46rem' }}
       />
     </div>
     <div className='col s10'>

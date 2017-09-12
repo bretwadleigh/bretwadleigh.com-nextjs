@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:dc="http://purl.org/dc/elements/1.1/"  xml:lang="en" lang="en" > 
+<head>
+	<title>License Manager v5</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/styles.css"  media="screen" /> 
+	<!-- <link rel="stylesheet" type="text/css" href="css/print.css"  media="print" /> -->
+
+<!--[if lt IE 9]> <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+	
+</head>
+<body><div id="container">
+<div id="header">
+<div id="logo">
+	<h1>Admin Panel</h1>
+</div>
+<nav>
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+
+<ul class="inline">
+<li>Dashboard</li>
+<li>Servers</li>
+<li>Topology</li>
+<li>Configurations</li>
+<li class="selected" 
+onclick="javascript:toggle_visibility('licensing-submenu');" 
+style="cursor:default;" 
+onmouseover="this.style.cursor='hand'">Licensing
+	<div id="licensing-submenu">
+	<ul>
+		<li>Enterprise License</li>
+		<li>EES</li>
+		<li>PCI</li>
+		<li>New License</li>
+	</ul>
+	</div>
+</li>
+</ul>
+</nav>
+</div>
+<div id="content">
+<div id="leftnav">
+
+	<div class="module">
+	<div id="submenu">
+	<ul>
+	<li class="selected">Alerts</li>
+	<li>License Details</li>
+	<li>License Usage</li>
+	</ul>
+	</div>
+	</div>
+	
+<div class="module">
+<h1>Enterprise License</h1><div id="info"><img src="images/1.png" width="17" height="17" /></div>
+<span id="change"><a href="#">change license</a></span>
+<span id="convert"><a href="#">convert to free</a></span>
+<table id="stats">
+<tr class="underline">
+<td class="right">Expiration</td>
+<td>&nbsp;</td>		
+<td colspan="4">Jan 11, 2011</td>
+</tr>
+<tr>
+<td colspan="6" class="hr"></td>
+</tr>
+<tr>
+<td class="right">Installed</td>
+<td>&nbsp;</td>
+<td>40 GB</td>
+<td>&nbsp;</td>
+<td><div id="install"><a href="#">install</a></div></td>
+<td>&nbsp;</td>
+</tr>	
+<tr>
+<td class="right">Received</td>
+<td>&nbsp;</td>
+<td>60 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>	
+<tr>
+<td class="right bold">Available</td>
+<td>&nbsp;</td>
+<td class="bold">100 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>	
+<tr>
+<td colspan="6" class="hr"></td>
+</tr>
+<tr>
+<td class="right">Fixed</td>
+<td>&nbsp;</td>
+<td>20 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="right">Pooled</td>
+<td>&nbsp;</td>
+<td>40 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="right bold">Distributed</td>
+<td>&nbsp;</td>
+<td class="bold">60 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="6" class="hr"></td>
+</tr>
+<tr>
+<td class="right bold">Remaining</td>
+<td>&nbsp;</td>
+<td class="bold">40 GB</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<div id="main">
+
+<div class="module">
+
+<h1>License Violations</h1> <span id="change"><a href="#">edit</a></span>
+<div>&nbsp;</div>
+<div id="wrapper">
+<div id="traffic-red">&nbsp;</div>
+<div id="warn-main">PoolA has a new license violation, it has 4 violations in last 30 days <div id="link"><img src="images/1.png" width="18" height="18" /></div></div>
+<div id="warn">A maximum of 5 violations is allowed in a rolling 30-day period before search is disabled for the shared pool.</div>
+</div>
+
+<div id="wrapper">
+<div id="traffic-yellow">&nbsp;</div>
+<div id="warn-main">PoolB is near license limit today <div id="link"><img src="images/1.png" width="18" height="18" /></div></div>
+<div id="warn">The shared pools have used more than 90% of their daily license limit.</div>
+</div>
+
+<div id="wrapper">
+<div id="traffic-green">&nbsp;</div><div id="warn-main">PoolC's search re-enabled in 10 days <div id="link"><img src="images/1.png" width="18" height="18" /></div></div>
+</div>
+</div>
+
+<div class="module">
+
+<h1>Too Much Data</h1>  <span id="change"><a href="#">edit</a></span>
+<div id="warn-tmd">Forwarders/sourcetypes with greater than twice the average volume over the past 15 minutes compared to this day last week.</div>
+<div id="wrapper">
+<div id="traffic-red-wnum">&nbsp;</div><div id="warn-main"><span class="num">6</span> forwarders are sending too much data <div id="link-wnum"><img src="images/1.png" width="18" height="18" /></div></div>
+</div>
+<div id="wrapper">
+<div id="traffic-yellow-wnum">&nbsp;</div><div id="warn-main"><span class="num">7</span> sourcetypes are sending too much data <div id="link-wnum"><img src="images/1.png" width="18" height="18" /></div></div>
+</div>
+</div>
+
+<div class="module">
+<h1>Configuration Changes</h1>  <span id="change"><a href="#">edit</a></span>
+
+<div id="timeframe">
+<ul>
+<li class="selected">Last 7 days</li>
+<li>Last 30 days</li>
+<li>All Time</li>
+</ul>
+</div>
+
+<div id="wrapper">
+<div id="traffic-green">&nbsp;</div><div id="warn-main">Added a 50 GB enterprise trial license <span class="date">Feb 2, 2009</span></div>
+</div>
+
+<div id="wrapper">
+<div id="traffic-green">&nbsp;</div><div id="warn-main">Upgraded license from free to enterprise trial license <span class="date">Jan 1, 2009</span></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</body>	
+</html>	

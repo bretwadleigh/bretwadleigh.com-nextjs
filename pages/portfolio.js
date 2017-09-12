@@ -36,17 +36,18 @@ export default class extends React.Component {
             <div className='container'>
               <div className='row valign-wrapper'>
                 {this.props.data
-                  //.filter(post => post.slug === 'about-intro')
+                  // .filter(post => post.slug === 'about-intro')
                   .map(post =>
                     <div>
-                    <h2 style={{align:'center',fontSize: '2em'}}>{`${post.title.rendered}:`}</h2>
-                    <div
-                      key={post.id}
-                      className='col s12 valign flow-text'
-                      dangerouslySetInnerHTML={{
-                        __html: post.content.rendered
-                      }}
-                    />
+                      <h2 style={{ align: 'center', fontSize: '2em' }}>{`${post
+                        .title.rendered}:`}</h2>
+                      <div
+                        key={post.id}
+                        className='col s12 valign flow-text'
+                        dangerouslySetInnerHTML={{
+                          __html: post.content.rendered
+                        }}
+                      />
                     </div>
                   )}
 
