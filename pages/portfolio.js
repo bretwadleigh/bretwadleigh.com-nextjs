@@ -34,11 +34,11 @@ export default class extends React.Component {
           />
           <div className='section white-background-flourish'>
             <div className='container'>
-              <div className='row valign-wrapper'>
                 {this.props.data
                   // .filter(post => post.slug === 'about-intro')
                   .map(post =>
-                    <div>
+                    <div className='row valign-wrapper'>
+                    <div className="col s12 portfolio-entry">
                       <h2 style={{ align: 'center', fontSize: '2em' }}>{`${post
                         .title.rendered}:`}</h2>
                       <div
@@ -49,12 +49,10 @@ export default class extends React.Component {
                         }}
                       />
                     </div>
+                    </div>
                   )}
-
-              </div>
             </div>
           </div>
-
         </main>
       </Layout>
     )
