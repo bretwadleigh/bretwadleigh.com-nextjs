@@ -28,6 +28,7 @@ const Edu = props =>
           padding-left: 16px;
         }
         .featured-image-cell img {
+          margin-top: 1.46rem;
           width: 100%;
         }
         @media screen and (max-width: 600px) {

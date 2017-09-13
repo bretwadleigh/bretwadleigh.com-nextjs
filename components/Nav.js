@@ -18,9 +18,9 @@ class Nav extends Component {
                 <img src='/static/img/logo-btw.png' />
               </a>
               <span className='headerText'>
-                Bret Wadleigh -
+                Bret Wadleigh - 
                 <span className='hide-on-small-only'>
-                  Front-End
+                Front-End
                 </span>
                 Web Developer
               </span>

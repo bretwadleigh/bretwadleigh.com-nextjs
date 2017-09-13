@@ -53,6 +53,16 @@ export default class extends React.Component {
                   )}
             </div>
           </div>
+          <style jsx>{`
+            .portfolio-entry {
+              padding-bottom: 1.5rem;
+              border-bottom: 1px solid #000;
+              margin-bottom: 1.5rem;
+            }
+            .portfolio-entry h2 {
+              margin-top: 0;
+            }
+            `}</style>
         </main>
       </Layout>
     )
