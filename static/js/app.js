@@ -145,6 +145,37 @@ function hScroller () {
 //   });
 // }
 
+function featureImages() {
+
+  var exp_images = $('img.featureImage')
+  if (exp_images.length) {
+    var exp_images_arr = [],
+      image_id = ''
+    exp_images.each(function () {
+      image_id = $(this).data('imageid')
+      exp_images_arr.push(image_id)
+    })
+    for (var i = 0; i < exp_images_arr.length; i++) {
+      console.log(
+        'http://bretwadleigh.com/data/wp-json/wp/v2/media/' +
+          exp_images_arr[i]
+      )
+      $.ajax({
+        url:
+          'http://bretwadleigh.com/data/wp-json/wp/v2/media/' +
+            exp_images_arr[i]
+      }).done(function (data) {
+        var img_url = data.guid.rendered
+        console.log(img_url)
+        var image = $('#fi_' + data.id)
+        console.log(image)
+        image.attr('src', img_url)
+      })
+    }
+  }
+
+}
+
 $(function () {
   initSideNav()
 
@@ -218,30 +249,5 @@ $(function () {
   // Init horizontal scroll buttons for event table
   hScroller()
 
-  var exp_images = $('img.featureImage')
-  if (exp_images.length) {
-    var exp_images_arr = [],
-      image_id = ''
-    exp_images.each(function () {
-      image_id = $(this).data('imageid')
-      exp_images_arr.push(image_id)
-    })
-    for (var i = 0; i < exp_images_arr.length; i++) {
-      console.log(
-        'http://bretwadleigh.com/data/wp-json/wp/v2/media/' +
-          exp_images_arr[i]
-      )
-      $.ajax({
-        url:
-          'http://bretwadleigh.com/data/wp-json/wp/v2/media/' +
-            exp_images_arr[i]
-      }).done(function (data) {
-        var img_url = data.guid.rendered
-        console.log(img_url)
-        var image = $('#fi_' + data.id)
-        console.log(image)
-        image.attr('src', img_url)
-      })
-    }
-  }
+
 })

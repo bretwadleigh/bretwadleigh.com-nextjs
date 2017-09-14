@@ -237,7 +237,6 @@ nav {
       }
     }
     @media screen and (max-width: 701px) and (min-width: 601px) {
-
       nav .headerText {
         font-size: 1.5rem !important;
       }
@@ -249,7 +248,7 @@ nav {
     color: #fff;
     padding: 8px; }
   nav .brand-logo {
-    margin-left: 64px;
+    margin-left: 20px;
     margin-top: 30px; }
   nav .headerText {
     position: absolute;
@@ -379,16 +378,30 @@ nav {
       }
 
 @media screen and (max-width: 600px) {
+
   .section .valign-wrapper {
-    flex-direction: column; } }
+    flex-direction: column; }
 
-@media screen and (max-width: 600px) {
   .section .valign-wrapper .order-1 {
-    order: 1; } }
+    order: 1; }
 
-@media screen and (max-width: 600px) {
   .section .valign-wrapper .order-2 {
-    order: 2; } }
+    order: 2; }
+
+  .homepage-item {
+    width: 100%;
+  }
+
+  .homepage-item .card {
+    width: 100%;
+  }
+
+  .hp-portfolio h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+}
 
 @media screen and (min-width: 993px) {
   #san-damiano {
@@ -464,6 +477,9 @@ nav {
   display: block;
 }*/
 
+.featured-image-cell img {
+  width: 100%;
+}
 
 .horizontal {
   max-height: 100px;

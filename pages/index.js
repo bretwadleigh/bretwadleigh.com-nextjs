@@ -25,6 +25,7 @@ export default class extends React.Component {
   componentDidMount () {
     // initTabs()
     logPageView()
+    featureImages()
   }
 
   render () {
@@ -70,7 +71,7 @@ export default class extends React.Component {
               </div>
               <div className='divider' />
               <div className='row light'>
-                <div className='col m6'>
+                <div className='col m6 homepage-item'>
                   <div className='card indigo darken-1'>
                     <div className='card-content white-text'>
                       <span className='card-title'>Latest Posts</span>
@@ -99,7 +100,7 @@ export default class extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className='col m6'>
+                <div className='col m6 homepage-item'>
                   <div className='card blue-grey darken-1'>
                     <div className='card-content white-text'>
                       <span className='card-title'>Experience</span>
@@ -132,7 +133,7 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='divider' />
-              <div className='row'>
+              <div className='row hp-portfolio'>
               <h2>Portfolio</h2>
               {this.props.portfolio.map(function (p, i) {
                 return (

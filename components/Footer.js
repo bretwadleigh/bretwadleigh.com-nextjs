@@ -85,20 +85,20 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-              Shapes graphic by{' '}
+              Shapes graphic by&nbsp;
               <a href='http://www.flaticon.com/authors/freepik'>freepik</a>
               from <a href='http://www.flaticon.com/'>Flaticon</a> is licensed
-              under
+              under&nbsp;
               <a
                 href='http://creativecommons.org/licenses/by/3.0/'
                 title='Creative Commons BY 3.0'
               >
-                CC BY 3.0
-              </a>.
-              Check out the new logo that I created on
+              CC BY 3.0.
+              </a>
+              Logo created using&nbsp;
               <a href='http://logomakr.com' title='Logo Maker'>
                 LogoMaker.com
-              </a>
+              </a>.
             </div>
             © <span id='copyright-date'>{this.currentYear()}</span>{' '}
             bretwadleigh.com
