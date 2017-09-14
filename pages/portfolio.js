@@ -39,8 +39,13 @@ export default class extends React.Component {
                   .map(post =>
                     <div className='row valign-wrapper'>
                     <div className="col s12 portfolio-entry">
-                      <h2 style={{ align: 'center', fontSize: '2em' }}>{`${post
-                        .title.rendered}:`}</h2>
+
+                      <h2 style={{ align: 'center', fontSize: '2em' }}>
+                      <a name={`section_${post.id}`}>
+                      {`${post
+                        .title.rendered}:`}
+                      </a>
+                      </h2>
                       <div
                         key={post.id}
                         className='col s12 valign flow-text'

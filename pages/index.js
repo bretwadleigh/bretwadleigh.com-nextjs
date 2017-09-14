@@ -12,11 +12,14 @@ export default class extends React.Component {
     const postParams = 'posts?filter[posts_per_page]=2'
     const experienceParams =
       'experience?filter[orderby]=date&order=asc&per_page=2'
+    const portfolioParams = 'portfolio?filter[orderby]=date&order=desc&per_page=2'
     const postRes = await fetch(apiUrl + postParams)
     const posts = await postRes.json()
     const expRes = await fetch(apiUrl + experienceParams)
     const experience = await expRes.json()
-    return { posts, experience }
+    const porRes = await fetch(apiUrl + portfolioParams)
+    const portfolio = await porRes.json()
+    return { posts, experience, portfolio }
   }
 
   componentDidMount () {
@@ -103,7 +106,7 @@ export default class extends React.Component {
                       <ul>
                         {this.props.experience.map(function (exp, i) {
                           return (
-                            <li>
+                            <li key={`li_${i}`}>
                               <a
                                 className='white-text'
                                 href={`/experience/${exp.id}`}
@@ -120,14 +123,50 @@ export default class extends React.Component {
                         <i className='large material-icons right'>
                           chevron_right
                         </i>
-                        <span>View All</span>
-                        <span className='hide-on-small-only'>
-                          My Experience
+                        <span>
+                        View All Experience
                         </span>
                       </a>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className='divider' />
+              <div className='row'>
+              <h2>Portfolio</h2>
+              {this.props.portfolio.map(function (p, i) {
+                return (
+                  <div className='col m6'>
+                   <div className='card'>
+                    <div className='card-content'>
+                    <span class="card-title">
+                    <a href={`/portfolio#section_${p.id}`}>
+                    {p.title.rendered}
+                    </a>
+                    </span>
+                    <p>
+                    <a href={`/portfolio#section_${p.id}`}>
+                    <img data-imageid={p.featured_media}
+                    alt={p.title.rendered}
+                    id={`fi_${p.featured_media}`}
+                    className='featureImage' />
+                    </a>
+                    </p>
+                    </div>
+                   </div>
+                  </div>
+                )
+              })}
+              <div className='center-align clear-both'>
+              <a href='/portfolio' className='btn'>
+                <i className='large material-icons right'>
+                  chevron_right
+                </i>
+                <span>
+                View My Portfolio
+                </span>
+              </a>
+              </div>
               </div>
             </div>
           </div>
@@ -167,6 +206,15 @@ export default class extends React.Component {
             }
             .card.horizontal .card-content p {
               padding: 15px 25px 20px;
+            }
+            .card-action .btn {
+              width: 100%;
+            }
+            .clear-both {
+              clear: both;
+            }
+            img.featureImage {
+              width: 100%;
             }
           `}</style>
         </main>

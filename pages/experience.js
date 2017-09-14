@@ -51,7 +51,11 @@ export default class extends React.Component {
               })}
             </div>
           </div>
-
+          <style jsx>{`
+            .featured-image-cell img {
+              width: 100%;
+            }
+            `}</style>
         </main>
       </Layout>
     )
