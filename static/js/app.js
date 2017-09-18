@@ -178,6 +178,7 @@ function featureImages() {
 
 $(function () {
   initSideNav()
+  featureImages()
 
   // Get current year and add to footer
   var dateToday = new Date()
