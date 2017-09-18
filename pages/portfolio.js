@@ -34,17 +34,25 @@ export default class extends React.Component {
           />
           <div className='section white-background-flourish'>
             <div className='container'>
-                {this.props.data
-                  // .filter(post => post.slug === 'about-intro')
-                  .map(post =>
-                    <div className='row valign-wrapper'>
-                    <div className="col s12 portfolio-entry">
+              {this.props.data
+                // .filter(post => post.slug === 'about-intro')
+                .map(post =>
+                  <div className='row valign-wrapper'>
+                    <div className='col s12 portfolio-entry'>
 
-                      <h2 style={{ align: 'center', fontSize: '2em' }}>
-                      <a name={`section_${post.id}`}>
-                      {`${post
-                        .title.rendered}:`}
-                      </a>
+                      <h2
+                        style={{
+                          align: 'center',
+                          fontSize: '2em',
+                          marginBottom: '0px'
+                        }}
+                      >
+                        <a
+                          name={`section_${post.id}`}
+                          style={{ color: '#6AA374' }}
+                        >
+                          {`${post.title.rendered}:`}
+                        </a>
                       </h2>
                       <div
                         key={post.id}
@@ -54,8 +62,8 @@ export default class extends React.Component {
                         }}
                       />
                     </div>
-                    </div>
-                  )}
+                  </div>
+                )}
             </div>
           </div>
           <style jsx>{`
@@ -67,7 +75,7 @@ export default class extends React.Component {
             .portfolio-entry h2 {
               margin-top: 0;
             }
-            `}</style>
+          `}</style>
         </main>
       </Layout>
     )
