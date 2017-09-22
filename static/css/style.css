@@ -555,6 +555,12 @@ footer.page-footer .row {
   margin-bottom: 0px;
   margin-top: 10px; }
 
+footer.page-footer .streetAddress,
+footer.page-footer .postalCode,
+footer.page-footer .addressCountry {
+  display: none;
+}
+
 .footer-copyright a {
   margin-right: 10px; }
 

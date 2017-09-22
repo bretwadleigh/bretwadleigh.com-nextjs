@@ -17,18 +17,21 @@ class Footer extends Component {
               <h5 className='light'>Contact</h5>
               <address>
                 <p typeof='schema:PostalAddress'>
-                  <span property='schema:streetAddress'>
-                    217 14th Ave.
+                  <span property='schema:name'>
+                  Bret Wadleigh
                   </span>
-                  <br />
+                  <span className='streetAddress' property='schema:streetAddress'>
+                    217 14th Ave.
+                    <br />
+                  </span>
                   <span property='schema:addressLocality'>
                     San Francisco
                   </span>,{' '}
                   <abbr title='California' property='schema:addressRegion'>
                     CA
                   </abbr>{' '}
-                  <span property='schema:postalCode'>94118</span>{' '}
-                  <abbr property='schema:addressCountry'>USA</abbr><br />
+                  <span className='postalCode' property='schema:postalCode'>94118</span>{' '}
+                  <abbr className='addressCountry' property='schema:addressCountry'>USA</abbr><br />
                   <a
                     href='tel:+14153785426'
                     property='telephone'
