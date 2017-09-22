@@ -19,6 +19,7 @@ class Footer extends Component {
                 <p typeof='schema:PostalAddress'>
                   <span property='schema:name'>
                   Bret Wadleigh
+                  <br />
                   </span>
                   <span className='streetAddress' property='schema:streetAddress'>
                     217 14th Ave.
