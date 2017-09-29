@@ -246,4 +246,88 @@ $(function () {
 
   // Init horizontal scroll buttons for event table
   hScroller()
+
+  function twitterCard () {
+    var tc = $('#twitter-card')
+    console.log(tc)
+    if (tc.length) {
+      //get the data from twitter-latest service
+      $.ajax({url: "/static/twitter-latest/data/data.json"})
+      .done(function( data ) {
+      console.log(data)
+      var tweets = data.tweets;
+      console.log(tweets);
+      console.log(tweets[0]);
+      tc.find('p').text('');
+      tc.find('p').html('<div id="tweets"></div>');
+      for (var i=0; i<tweets.length; i++){
+        var card = $(createTwitterCard(tweets[i], i));
+        console.log(card);
+        $('#tweets').append(card);
+      }
+      rotateTwitterCard()
+      })
+    }
+  }
+  twitterCard()
+  function createTwitterCard(obj, count) {
+    var html='', textArr = obj.text.split(' '), htmlArr = [];
+    for (var j=0; j < textArr.length; j++) {
+      if (textArr[j].charAt(0)=='@'){
+        var htmlNode = '<a href="https://twitter.com/' + textArr[j] + '">' + textArr[j] + '</a>';
+      } else if (textArr[j].charAt(0)=='#') {
+        var htmlNode = '<a href="https://twitter.com/hashtag/' + textArr[j].slice(1) + '?src=hash">' + textArr[j] + '</a>';
+      } else if (textArr[j].indexOf('https://t.co') == 0) {
+        var htmlNode = '<a href="' + textArr[j] + '">' + textArr[j] + '</a>';
+      } else {
+        var htmlNode = textArr[j];
+      }
+      htmlArr.push(htmlNode);
+    }
+    html = html + '<div id="tweet_' + obj.id + '" class="tweetCard tweetNum_' + count + '">';
+    html = html + '<p class="tweetName">Bret Wadleigh</p>';
+    html = html + '<p class="tweetAddress"><a href="https://twitter.com/' + obj.screen_name + '" class="tweet_image_url"><img src="' + obj.image + '" /></a>&nbsp;<a href="https://twitter.com/' + obj.screen_name + '" class="tweet_image_text">@' + obj.screen_name + '</a></p>';
+    html = html + '<p class="tweet_text">' + htmlArr.join(' ') + '</p>';
+    html = html + '<p class="tweet_date">' + obj.created_date + '</p>';
+    html = html + '</div>';
+    return html;
+  }
+
+  function rotateTwitterCard() {
+    console.log('rotateTwitterCard');
+    var tweet_cards = $('#twitter-card').find('.tweetCard'), rotations = 50;
+    console.log(tweet_cards);
+    var tc = $('#tweets');
+    tc.attr('data-count', 0);
+    tc.addClass('count_' + 0);
+    console.log(tc);
+    if (tweet_cards.length) {
+    var rotate = setInterval(function() {
+      var tc = $('#tweets');
+      var count = tc.attr('data-count');
+      console.log(count);
+      tc.removeClass('count_' + count);
+      count = parseInt(count) + 1;
+      if (count >= ($('.tweetCard').length - 1)) {
+        count = 0;
+      }
+      tc.attr('data-count', count);
+      tc.addClass('count_' + count)
+      console.log('rotations: ' + rotations + ' count: ' + count);
+      rotations = rotations - 1;
+      if (rotations == 0) {
+        clearInterval(rotate);
+      }
+    }, 10000);
+
+    }
+
+  }
+
+  function addActive(id) {
+    console.log('addActive: ' + id);
+    $('#' + id).addClass('active');
+  }
+
+
 })

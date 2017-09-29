@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
@@ -40,14 +41,14 @@ export default class extends React.Component {
           <div className='section banner valign-wrapper' id='banner'>
             <div className='valign container'>
               <div className='row center'>
-                <div className='col m12 hide-on-small-only'>
+                <div className='col m12 hide-on-small-only top-section'>
                   <div className='card horizontal'>
                     <div className='card-image btw-header'>
                       <img src='/static/img/btw-header.jpg' />
                     </div>
                     <div className='card-stacked'>
-                      <div className='card-content'>
-                        <p>
+                      <div className='card-content' id='twitter-card'>
+                        <p id="tweet-container">
                           Hi, I&apos;m Bret, a Web Developer based in San
                           Francisco, CA. I&apos;m a father of two who enjoys
                           surfing and taking my girls to the beach on my days
@@ -205,13 +206,14 @@ export default class extends React.Component {
               overflow: hidden;
             }
             .btw-header img {
-              top: -50px;
+              top: 10px;
+              left: 10px;
             }
             .card.horizontal {
-              max-height: 200px;
+              min-height: 275px;
             }
             .card.horizontal .card-content p {
-              padding: 15px 25px 20px;
+              padding: 15px 25px 0;
             }
             .card-action .btn {
               width: 100%;

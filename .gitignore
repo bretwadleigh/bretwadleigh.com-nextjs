@@ -1,5 +1,5 @@
 node_modules
-
+static/twitter-latest/
 # Compiled source #
 ###################
 *.com
@@ -55,3 +55,6 @@ coverage
 #######################################
 .idea
 ci-react.iml
+
+# environment variables
+.env
