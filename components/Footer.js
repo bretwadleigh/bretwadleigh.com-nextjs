@@ -51,7 +51,7 @@ class Footer extends Component {
                 </p>
               </address>
             </div>
-            <div className='col s12 m6'>
+            <div className='col s12 m6 hide-on-small-only'>
               <h5 className='light'>About This Site</h5>
               <p>
                 <span>This site uses </span>
@@ -89,20 +89,34 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-              Shapes graphic by&nbsp;
-              <a href='http://www.flaticon.com/authors/freepik'>freepik</a>
-              from <a href='http://www.flaticon.com/'>Flaticon</a> is licensed
-              under&nbsp;
-              <a
-                href='http://creativecommons.org/licenses/by/3.0/'
-                title='Creative Commons BY 3.0'
-              >
-              CC BY 3.0.
-              </a>
-              Logo created using&nbsp;
-              <a href='http://logomakr.com' title='Logo Maker'>
-                LogoMaker.com
-              </a>.
+            <span>This site uses </span>
+            <OutLink
+              label='NextJS'
+              to='https://github.com/zeit/next.js/'
+              title='NextJs'
+            >
+              NextJs
+            </OutLink>
+            <span> - a Framework for server-rendered React apps, and </span>
+            <OutLink
+              label='MaterializeCSS'
+              to='http://materializecss.com/'
+              title='Materialize.css'
+            >
+              materialize&#46;css
+            </OutLink>
+            <span>, a CSS Framework based on </span>
+            <OutLink
+              label='MaterialDesign'
+              to='https://material.io/'
+              title='Material Design'
+            >
+              Material Design
+            </OutLink>
+            <span>
+              . The backend utilizes WP API, the WordPress REST API built
+              into the latest versions of WordPress.{' '}
+            </span>
             </div>
             © <span id='copyright-date'>{this.currentYear()}</span>{' '}
             bretwadleigh.com
@@ -123,7 +137,7 @@ class Footer extends Component {
                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-               ga('create', 'UA-5819863-21', 'auto');
+               ga('create', 'UA-102723554-2', 'auto');
                ga('send', 'pageview');
       `
           }}

@@ -7,13 +7,15 @@
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^4.0.0",
+    "express": "^4.16.1",
     "lodash.debounce": "^4.0.8",
     "lru-cache": "^4.0.2",
     "next": "^2.4.3",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-ga": "^2.2.0"
+    "react-ga": "^2.2.0",
+    "react-gravatar": "^2.6.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

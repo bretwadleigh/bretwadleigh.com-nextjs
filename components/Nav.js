@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import OutLink from '../components/OutLink'
+import Gravatar from 'react-gravatar'
 
 class Nav extends Component {
   componentDidMount () {
@@ -15,7 +16,7 @@ class Nav extends Component {
           <nav className='main-nav search-nav'>
             <div className='nav-wrapper'>
               <a href='/' className='brand-logo'>
-                <img src='/static/img/logo-btw.png' />
+                <Gravatar email="bretwadleigh@yahoo.com" size={70} />
               </a>
               <span className='headerText'>
                 Bret Wadleigh -&nbsp;
