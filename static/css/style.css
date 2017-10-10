@@ -648,17 +648,46 @@ ul li {
 }
 
 .tweetCard {
-  display: none;
-  opacity: 0;
+  opacity: 1;
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 100ms;
 }
 
 .count_0 .tweetCard.tweetNum_0,
 .count_1 .tweetCard.tweetNum_1,
 .count_2 .tweetCard.tweetNum_2,
 .count_3 .tweetCard.tweetNum_3 {
-  display: block;
-  opacity: 1;
-  transition: opacity 3s;
+  max-height: 300px;
+  visibility: visible;
+  transition: max-height 3s;
+}
+
+.count_0 .tweetCard.tweetNum_0 a {color: #3949ab; }
+.count_1 .tweetCard.tweetNum_1 a {color: rgb(106, 163, 116);}
+.count_2 .tweetCard.tweetNum_2 a {color: #78AFCE;}
+
+.fade_in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-duration: 3s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+  33% {
+    opacity: 0.3;
+  }
+  66% {
+    opacity: 0.6;
+  }
+	100% {
+		opacity: 1;
+	}
 }
 
 .tweetCard.active {

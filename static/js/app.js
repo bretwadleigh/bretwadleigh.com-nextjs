@@ -312,7 +312,7 @@ $(function () {
         count = 0;
       }
       tc.attr('data-count', count);
-      tc.addClass('count_' + count)
+      tc.delay(3000).addClass('count_' + count + ' fadein');
       console.log('rotations: ' + rotations + ' count: ' + count);
       rotations = rotations - 1;
       if (rotations == 0) {
