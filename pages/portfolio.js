@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import StickyNav from '../components/StickyNav'
+//import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
@@ -26,7 +26,6 @@ export default class extends React.Component {
         description='The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis.'
       >
         <main id='portfolio'>
-          <StickyNav />
           <Title
             title='Portfolio'
             imgPath='/static/img/campus-11.jpg'

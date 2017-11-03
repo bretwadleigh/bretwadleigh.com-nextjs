@@ -2,7 +2,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
-import StickyNav from '../components/StickyNav'
+//import StickyNav from '../components/StickyNav'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -37,7 +37,6 @@ export default class extends React.Component {
         description='Experienced PHP Full-Stack Developer with 10 years of Front-End Development on Java, C# and PHP'
       >
         <main>
-          <StickyNav />
           <div className='section banner valign-wrapper' id='banner'>
             <div className='valign container'>
               <div className='row center'>

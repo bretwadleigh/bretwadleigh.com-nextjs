@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import OutLink from '../components/OutLink'
+import Gravatar from 'react-gravatar'
 
 class Footer extends Component {
   currentYear () {
@@ -13,7 +14,7 @@ class Footer extends Component {
       <footer className='page-footer'>
         <div className='container'>
           <div className='row white-text'>
-            <div className='col s12 m6'>
+            <div className='col s12 m6 footer-contact'>
               <h5 className='light'>Contact</h5>
               <address>
                 <p typeof='schema:PostalAddress'>
@@ -29,7 +30,7 @@ class Footer extends Component {
                     San Francisco
                   </span>,{' '}
                   <abbr title='California' property='schema:addressRegion'>
-                    CA
+                    &nbsp;CA
                   </abbr>{' '}
                   <span className='postalCode' property='schema:postalCode'>94118</span>{' '}
                   <abbr className='addressCountry' property='schema:addressCountry'>USA</abbr><br />
@@ -50,11 +51,14 @@ class Footer extends Component {
                   </a>
                 </p>
               </address>
+              <a href='/' className='footer-photo'>
+                <Gravatar email="bretwadleigh@yahoo.com" size={100} />
+              </a>
             </div>
             <div className='col s12 m6 hide-on-small-only'>
-              <h5 className='light'>About This Site</h5>
+              <h5 className='light'>This Site:</h5>
               <p>
-                <span>This site uses </span>
+                <span>Built using </span>
                 <OutLink
                   label='NextJS'
                   to='https://github.com/zeit/next.js/'
@@ -62,7 +66,7 @@ class Footer extends Component {
                 >
                   NextJs
                 </OutLink>
-                <span> - a Framework for server-rendered React apps, and </span>
+                <span> and </span>
                 <OutLink
                   label='MaterializeCSS'
                   to='http://materializecss.com/'
@@ -70,18 +74,14 @@ class Footer extends Component {
                 >
                   materialize&#46;css
                 </OutLink>
-                <span>, a CSS Framework based on </span>
+                <span>, a </span>
                 <OutLink
                   label='MaterialDesign'
                   to='https://material.io/'
                   title='Material Design'
                 >
-                  Material Design
+                  Material Design CSS framework.
                 </OutLink>
-                <span>
-                  . The backend utilizes WP API, the WordPress REST API built
-                  into the latest versions of WordPress.{' '}
-                </span>
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-            <span>This site uses </span>
+            <span>Built using </span>
             <OutLink
               label='NextJS'
               to='https://github.com/zeit/next.js/'
@@ -97,7 +97,7 @@ class Footer extends Component {
             >
               NextJs
             </OutLink>
-            <span> - a Framework for server-rendered React apps, and </span>
+            <span> and </span>
             <OutLink
               label='MaterializeCSS'
               to='http://materializecss.com/'
@@ -113,13 +113,12 @@ class Footer extends Component {
             >
               Material Design
             </OutLink>
-            <span>
-              . The backend utilizes WP API, the WordPress REST API built
-              into the latest versions of WordPress.{' '}
-            </span>
+
             </div>
+            <div className='copyright'>
             © <span id='copyright-date'>{this.currentYear()}</span>{' '}
-            bretwadleigh.com
+            bretwadleigh.net
+            </div>
           </div>
 
           <a

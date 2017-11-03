@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import StickyNav from '../components/StickyNav'
+//import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import Edu from '../components/Edu'
 import 'isomorphic-fetch'
@@ -27,7 +27,6 @@ export default class extends React.Component {
         description='Bret Wadleigh&quot;s Education'
       >
         <main id='education'>
-          <StickyNav />
           <Title
             title='Education'
             imgPath='/static/img/campus-11.jpg'
@@ -53,7 +52,6 @@ export default class extends React.Component {
               })}
             </div>
           </div>
-
         </main>
       </Layout>
     )
