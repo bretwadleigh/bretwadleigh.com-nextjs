@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-//import StickyNav from '../components/StickyNav'
+// import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import Edu from '../components/Edu'
 import 'isomorphic-fetch'

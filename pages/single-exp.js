@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import StickyNav from '../components/StickyNav'
+// import StickyNav from '../components/StickyNav'
 import Error404 from '../components/Error404'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
@@ -43,8 +43,6 @@ export default class extends React.Component {
         {this.props.data.length === 0
           ? <Error404 />
           : <main className='single-post'>
-            <StickyNav />
-
             <div className='container single-experience'>
               <h1
                 dangerouslySetInnerHTML={{

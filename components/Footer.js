@@ -19,10 +19,13 @@ class Footer extends Component {
               <address>
                 <p typeof='schema:PostalAddress'>
                   <span property='schema:name'>
-                  Bret Wadleigh
-                  <br />
+                    Bret Wadleigh
+                    <br />
                   </span>
-                  <span className='streetAddress' property='schema:streetAddress'>
+                  <span
+                    className='streetAddress'
+                    property='schema:streetAddress'
+                  >
                     217 14th Ave.
                     <br />
                   </span>
@@ -32,8 +35,16 @@ class Footer extends Component {
                   <abbr title='California' property='schema:addressRegion'>
                     &nbsp;CA
                   </abbr>{' '}
-                  <span className='postalCode' property='schema:postalCode'>94118</span>{' '}
-                  <abbr className='addressCountry' property='schema:addressCountry'>USA</abbr><br />
+                  <span className='postalCode' property='schema:postalCode'>
+                    94118
+                  </span>{' '}
+                  <abbr
+                    className='addressCountry'
+                    property='schema:addressCountry'
+                  >
+                    USA
+                  </abbr>
+                  <br />
                   <a
                     href='tel:+14153785426'
                     property='telephone'
@@ -52,7 +63,7 @@ class Footer extends Component {
                 </p>
               </address>
               <a href='/' className='footer-photo'>
-                <Gravatar email="bretwadleigh@yahoo.com" size={100} />
+                <Gravatar email='bretwadleigh@yahoo.com' size={100} />
               </a>
             </div>
             <div className='col s12 m6 hide-on-small-only'>
@@ -89,35 +100,35 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             <div className='row hide-on-large-only center'>
-            <span>Built using </span>
-            <OutLink
-              label='NextJS'
-              to='https://github.com/zeit/next.js/'
-              title='NextJs'
-            >
-              NextJs
-            </OutLink>
-            <span> and </span>
-            <OutLink
-              label='MaterializeCSS'
-              to='http://materializecss.com/'
-              title='Materialize.css'
-            >
-              materialize&#46;css
-            </OutLink>
-            <span>, a CSS Framework based on </span>
-            <OutLink
-              label='MaterialDesign'
-              to='https://material.io/'
-              title='Material Design'
-            >
-              Material Design
-            </OutLink>
+              <span>Built using </span>
+              <OutLink
+                label='NextJS'
+                to='https://github.com/zeit/next.js/'
+                title='NextJs'
+              >
+                NextJs
+              </OutLink>
+              <span> and </span>
+              <OutLink
+                label='MaterializeCSS'
+                to='http://materializecss.com/'
+                title='Materialize.css'
+              >
+                materialize&#46;css
+              </OutLink>
+              <span>, a CSS Framework based on </span>
+              <OutLink
+                label='MaterialDesign'
+                to='https://material.io/'
+                title='Material Design'
+              >
+                Material Design
+              </OutLink>
 
             </div>
             <div className='copyright'>
-            © <span id='copyright-date'>{this.currentYear()}</span>{' '}
-            bretwadleigh.net
+              © <span id='copyright-date'>{this.currentYear()}</span>{' '}
+              bretwadleigh.net
             </div>
           </div>
 

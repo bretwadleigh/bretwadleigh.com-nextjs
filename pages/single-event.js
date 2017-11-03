@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from '../components/Nav'
-import StickyNav from '../components/StickyNav'
+// import StickyNav from '../components/StickyNav'
 import Footer from '../components/Footer'
 import Error404 from '../components/Error404'
 import Head from 'next/head'
@@ -75,7 +75,6 @@ export default class extends React.Component {
         {this.props.data.length === 0
           ? <Error404 />
           : <main id='single-event'>
-            <StickyNav />
 
             <h1 className='center light valign' style={{ fontSize: '50px' }}>
               {this.props.data[0].title.rendered}

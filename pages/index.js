@@ -1,8 +1,7 @@
-
 import React from 'react'
 import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
-//import StickyNav from '../components/StickyNav'
+// import StickyNav from '../components/StickyNav'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -47,7 +46,7 @@ export default class extends React.Component {
                     </div>
                     <div className='card-stacked'>
                       <div className='card-content' id='twitter-card'>
-                        <p id="tweet-container">
+                        <p id='tweet-container'>
                           Hi, I&apos;m Bret, a Web Developer based in San
                           Francisco, CA. I&apos;m a father of two who enjoys
                           surfing and taking my girls to the beach on my days
