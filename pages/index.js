@@ -42,9 +42,10 @@ export default class extends React.Component {
 
                 <h1 className='header center light-blue-text'>Committed</h1>
                 <div className='row center'>
-                  <h5 className='header col s12 light dark-bg white-text'>
-                    Building Applications and Websites<br />using Javascript and
-                    PHP
+                  <h5 className='header col s12 light white-text'>
+                  <span className='dark-bg'>
+                    &nbsp;Building Applications and Websites&nbsp;<br />using Javascript and
+                    PHP&nbsp;</span>
                   </h5>
                 </div>
                 <div className='row center'>
@@ -217,6 +218,9 @@ export default class extends React.Component {
                 background-position-x: 3%;
                 background-size: 481px;
               }
+            }
+            .header span {
+              display: inline-block;
             }
             .dark-bg {
               background-color: rgba(0, 0, 0, 0.3);
