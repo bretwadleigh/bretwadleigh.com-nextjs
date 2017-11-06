@@ -177,6 +177,8 @@ $(function () {
   initSideNav()
   featureImages()
 
+  $('.parallax').parallax();
+
   // Get current year and add to footer
   var dateToday = new Date()
   var currentYear = dateToday.getFullYear()

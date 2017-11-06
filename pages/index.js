@@ -36,13 +36,29 @@ export default class extends React.Component {
         description='Experienced PHP Full-Stack Developer with 10 years of Front-End Development on Java, C# and PHP'
       >
         <main>
+        <div id='index-banner' className='parallax-container'>
+            <div className='section no-pad-bot'>
+              <div className='container'>
+
+                <h1 className='header center light-blue-text'>Committed</h1>
+                <div className='row center'>
+                  <h5 className='header col s12 light dark-bg white-text'>Building Applications and Websites<br/>using Javascript and PHP</h5>
+                </div>
+                <div className='row center'>
+                <br />
+                  <a href='/portfolio' id='download-button' className='btn-large waves-effect waves-light light-blue'>View My Portfolio</a>
+                </div>
+              </div>
+            </div>
+            <div className='parallax'><img src='/static/img/Slide_170_fb_bret.jpg' alt='Me Samoa 2009' /></div>
+          </div>
           <div className='section banner valign-wrapper' id='banner'>
             <div className='valign container'>
               <div className='row center'>
                 <div className='col m12 hide-on-small-only top-section'>
                   <div className='card horizontal'>
                     <div className='card-image btw-header'>
-                      <img src='/static/img/btw-header.jpg' />
+                      <img src='/static/img/bret_nila_sept2017.png' />
                     </div>
                     <div className='card-stacked'>
                       <div className='card-content' id='twitter-card'>
@@ -162,16 +178,7 @@ export default class extends React.Component {
                     </span>
                   )
                 })}
-                <div className='center-align clear-both'>
-                  <a href='/portfolio' className='btn'>
-                    <i className='large material-icons right'>
-                      chevron_right
-                    </i>
-                    <span>
-                      View My Portfolio
-                    </span>
-                  </a>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -197,6 +204,9 @@ export default class extends React.Component {
                 background-size: 481px;
               }
             }
+            .dark-bg {
+              background-color: rgba(0, 0, 0, 0.3);
+            }
             .tab a {
               font-size: 18px;
             }
@@ -204,7 +214,7 @@ export default class extends React.Component {
               overflow: hidden;
             }
             .btw-header img {
-              top: 10px;
+              top: -40px;
               left: 10px;
             }
             .card.horizontal {
