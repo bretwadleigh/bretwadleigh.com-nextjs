@@ -5,12 +5,12 @@ const Blog = props =>
     <div className='col s12'>
       {props.homepageOnly
         ? <a href={props.url}>
-          <h3 style={{ marginBottom: '0', color: '#6AA374' }}>
+          <h3 style={{ marginBottom: '0', color: '#039be5' }}>
             {props.title}
           </h3>
         </a>
         : <a href={`/posts/${props.id}`}>
-          <h3 style={{ marginBottom: '0', color: '#6AA374' }}>
+          <h3 style={{ marginBottom: '0', color: '#039be5' }}>
             {props.title}
           </h3>
         </a>}

@@ -48,7 +48,7 @@ export default class extends React.Component {
                       >
                         <a
                           name={`section_${post.id}`}
-                          style={{ color: '#6AA374' }}
+                          style={{ color: '#039be5' }}
                         >
                           {`${post.title.rendered}:`}
                         </a>
