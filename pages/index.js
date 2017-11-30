@@ -7,7 +7,7 @@ import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
-    const apiUrl = 'http://bretwadleigh.com/data/wp-json/wp/v2/'
+    const apiUrl = 'https://bretwadleigh.com/data/wp-json/wp/v2/'
     const postParams = 'posts?filter[posts_per_page]=2'
     const experienceParams =
       'experience?filter[orderby]=date&order=asc&per_page=2'
@@ -73,7 +73,6 @@ export default class extends React.Component {
                 <div className='col m12 hide-on-small-only top-section'>
                   <div className='card horizontal'>
                     <div className='card-image btw-header'>
-                      <img src='/static/img/bret_nila_sept2017.png' />
                     </div>
                     <div className='card-stacked'>
                       <div className='card-content' id='twitter-card'>
@@ -229,7 +228,10 @@ export default class extends React.Component {
               font-size: 18px;
             }
             .btw-header {
+              width: 50%;
               overflow: hidden;
+              background: url(/static/img/bret_nila_sept2017.png) 0 -25px no-repeat;
+              background-size: cover;
             }
             .btw-header img {
               top: -40px;

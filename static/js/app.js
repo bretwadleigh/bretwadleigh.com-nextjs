@@ -156,11 +156,11 @@ function featureImages () {
     })
     for (var i = 0; i < exp_images_arr.length; i++) {
       console.log(
-        'http://bretwadleigh.com/data/wp-json/wp/v2/media/' + exp_images_arr[i]
+        'https://bretwadleigh.com/data/wp-json/wp/v2/media/' + exp_images_arr[i]
       )
       $.ajax({
         url:
-          'http://bretwadleigh.com/data/wp-json/wp/v2/media/' +
+          'https://bretwadleigh.com/data/wp-json/wp/v2/media/' +
             exp_images_arr[i]
       }).done(function (data) {
         var img_url = data.guid.rendered

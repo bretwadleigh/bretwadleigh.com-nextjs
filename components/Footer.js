@@ -99,24 +99,17 @@ class Footer extends Component {
         </div>
         <div className='footer-copyright'>
           <div className='container'>
-            <div className='row hide-on-large-only center'>
+            <div className='row hide-on-med-and-up center'>
               <span>Built using </span>
               <OutLink
                 label='NextJS'
                 to='https://github.com/zeit/next.js/'
-                title='NextJs'
-              >
-                NextJs
-              </OutLink>
-              <span> and </span>
+                title='NextJs'>NextJs and</OutLink>
               <OutLink
                 label='MaterializeCSS'
                 to='http://materializecss.com/'
-                title='Materialize.css'
-              >
-                materialize&#46;css
-              </OutLink>
-              <span>, a CSS Framework based on </span>
+                title='Materialize.css'>materialize&#46;css,</OutLink>
+              <span>a CSS Framework based on </span>
               <OutLink
                 label='MaterialDesign'
                 to='https://material.io/'
