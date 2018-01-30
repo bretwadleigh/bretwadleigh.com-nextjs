@@ -19,7 +19,9 @@ export const logPageView = () => {
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
     const apiUrl = 'https://bretwadleigh.com/data/wp-json/wp/v2/'
-    const params = `major-event?filter[name]=${id}&fields=title,content,better_featured_image,acf`
+    const params = `major-event?filter[name]=${
+      id
+    }&fields=title,content,better_featured_image,acf`
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -32,8 +34,9 @@ export default class extends React.Component {
 
   titleTag (props) {
     if (this.props.data.length > 0) {
-      return `${this.props.data[0].title
-        .rendered} | Bret Wadleigh | Front-End Web Developer`
+      return `${
+        this.props.data[0].title.rendered
+      } | Bret Wadleigh | Front-End Web Developer`
     }
     return `News | Bret Wadleigh | Front-End Web Developer`
   }
@@ -72,28 +75,27 @@ export default class extends React.Component {
           <link href='/static/css/style.css' rel='stylesheet' />
         </Head>
         <Nav headerType='interior' />
-        {this.props.data.length === 0
-          ? <Error404 />
-          : <main id='single-event'>
-
+        {this.props.data.length === 0 ? (
+          <Error404 />
+        ) : (
+          <main id='single-event'>
             <h1 className='center light valign' style={{ fontSize: '50px' }}>
               {this.props.data[0].title.rendered}
             </h1>
             <div className='container'>
-
               <div className='row'>
                 <div className='center' style={{ marginTop: '16px' }}>
                   <a
                     href={this.props.data[0].acf.registration_link}
-                    title={`Register for the ${this.props.data[0].title
-                        .rendered}`}
+                    title={`Register for the ${
+                      this.props.data[0].title.rendered
+                    }`}
                     target='_blank'
-                    >
+                  >
                     <button className='btn waves-effect waves-light'>
-                        Register
-                      </button>
+                      Register
+                    </button>
                   </a>
-
                 </div>
 
                 <div
@@ -101,43 +103,42 @@ export default class extends React.Component {
                   dangerouslySetInnerHTML={{
                     __html: this.props.data[0].content.rendered
                   }}
-                  />
+                />
                 <div className='center'>
-                  {this.props.data[0].better_featured_image !== null
-                      ? <img
-                        className='responsive-img'
-                        src={
-                            this.props.data[0].better_featured_image.source_url
-                          }
-                        />
-                      : ''}
+                  {this.props.data[0].better_featured_image !== null ? (
+                    <img
+                      className='responsive-img'
+                      src={this.props.data[0].better_featured_image.source_url}
+                    />
+                  ) : (
+                    ''
+                  )}
                 </div>
                 <div
                   className='center'
                   style={{ marginBottom: '16px', marginTop: '16px' }}
-                  >
+                >
                   <a
                     href={this.props.data[0].acf.registration_link}
-                    title={`Register for the ${this.props.data[0].title
-                        .rendered}`}
+                    title={`Register for the ${
+                      this.props.data[0].title.rendered
+                    }`}
                     target='_blank'
-                    >
+                  >
                     <button className='btn waves-effect waves-light'>
-                        Register
-                      </button>
+                      Register
+                    </button>
                   </a>
-
                 </div>
               </div>
             </div>
-
-          </main>}
+          </main>
+        )}
         <Footer />
 
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' />
         <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js' />
         <script src='/static/js/app.js' />
-
       </div>
     )
   }

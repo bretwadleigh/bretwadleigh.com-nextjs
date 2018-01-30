@@ -39,13 +39,13 @@ export default class extends React.Component {
           <div id='index-banner' className='parallax-container'>
             <div className='section no-pad-bot'>
               <div className='container'>
-
                 <h1 className='header center light-blue-text'>Committed</h1>
                 <div className='row center'>
                   <h5 className='header col s12 light white-text'>
-                  <span className='dark-bg'>
-                    &nbsp;Building Applications and Websites&nbsp;<br />using Javascript and
-                    PHP&nbsp;</span>
+                    <span className='dark-bg'>
+                      &nbsp;Building Applications and Websites&nbsp;<br />using
+                      Javascript and PHP&nbsp;
+                    </span>
                   </h5>
                 </div>
                 <div className='row center'>
@@ -73,6 +73,10 @@ export default class extends React.Component {
                 <div className='col m12 hide-on-small-only top-section'>
                   <div className='card horizontal'>
                     <div className='card-image btw-header'>
+                    <img
+                    src='/static/img/bret_nila_sept2017.png'
+                    alt='Daddy and Nila'
+                    />
                     </div>
                     <div className='card-stacked'>
                       <div className='card-content' id='twitter-card'>
@@ -153,9 +157,7 @@ export default class extends React.Component {
                         <i className='large material-icons right'>
                           chevron_right
                         </i>
-                        <span>
-                          View All Experience
-                        </span>
+                        <span>View All Experience</span>
                       </a>
                     </div>
                   </div>
@@ -192,7 +194,6 @@ export default class extends React.Component {
                     </span>
                   )
                 })}
-
               </div>
             </div>
           </div>
@@ -230,7 +231,6 @@ export default class extends React.Component {
             .btw-header {
               width: 50%;
               overflow: hidden;
-              background: url(/static/img/bret_nila_sept2017.png) 0 -25px no-repeat;
               background-size: cover;
             }
             .btw-header img {

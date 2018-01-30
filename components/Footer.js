@@ -29,9 +29,7 @@ class Footer extends Component {
                     217 14th Ave.
                     <br />
                   </span>
-                  <span property='schema:addressLocality'>
-                    San Francisco
-                  </span>,{' '}
+                  <span property='schema:addressLocality'>San Francisco</span>,{' '}
                   <abbr title='California' property='schema:addressRegion'>
                     &nbsp;CA
                   </abbr>{' '}
@@ -104,11 +102,17 @@ class Footer extends Component {
               <OutLink
                 label='NextJS'
                 to='https://github.com/zeit/next.js/'
-                title='NextJs'>NextJs and</OutLink>
+                title='NextJs'
+              >
+                NextJs and
+              </OutLink>
               <OutLink
                 label='MaterializeCSS'
                 to='http://materializecss.com/'
-                title='Materialize.css'>materialize&#46;css,</OutLink>
+                title='Materialize.css'
+              >
+                materialize&#46;css,
+              </OutLink>
               <span>a CSS Framework based on </span>
               <OutLink
                 label='MaterialDesign'
@@ -117,7 +121,6 @@ class Footer extends Component {
               >
                 Material Design
               </OutLink>
-
             </div>
             <div className='copyright'>
               © <span id='copyright-date'>{this.currentYear()}</span>{' '}

@@ -35,10 +35,9 @@ export default class extends React.Component {
             <div className='container'>
               {this.props.data
                 // .filter(post => post.slug === 'about-intro')
-                .map(post =>
+                .map(post => (
                   <div className='row valign-wrapper'>
                     <div className='col s12 portfolio-entry'>
-
                       <h2
                         style={{
                           align: 'center',
@@ -62,7 +61,7 @@ export default class extends React.Component {
                       />
                     </div>
                   </div>
-                )}
+                ))}
             </div>
           </div>
           <style jsx>{`
