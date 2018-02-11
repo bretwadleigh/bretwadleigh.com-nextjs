@@ -73,10 +73,10 @@ export default class extends React.Component {
                 <div className='col m12 hide-on-small-only top-section'>
                   <div className='card horizontal'>
                     <div className='card-image btw-header'>
-                    <img
-                    src='/static/img/bret_nila_sept2017.png'
-                    alt='Daddy and Nila'
-                    />
+                      <img
+                        src='/static/img/bret_nila_sept2017.png'
+                        alt='Daddy and Nila'
+                      />
                     </div>
                     <div className='card-stacked'>
                       <div className='card-content' id='twitter-card'>
@@ -232,10 +232,13 @@ export default class extends React.Component {
               width: 50%;
               overflow: hidden;
               background-size: cover;
+              text-align: center;
             }
             .btw-header img {
-              top: -40px;
-              left: 10px;
+              max-width: 100%;
+              max-height: 100%;
+              display: inline-block;
+              vertical-align: middle;
             }
             .card.horizontal {
               min-height: 275px;
