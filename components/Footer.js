@@ -26,15 +26,15 @@ class Footer extends Component {
                     className='streetAddress'
                     property='schema:streetAddress'
                   >
-                    217 14th Ave.
+                    14 Bennington Drive
                     <br />
                   </span>
-                  <span property='schema:addressLocality'>San Francisco</span>,{' '}
+                  <span property='schema:addressLocality'>Medford</span>,{' '}
                   <abbr title='California' property='schema:addressRegion'>
-                    &nbsp;CA
+                    &nbsp;NJ
                   </abbr>{' '}
                   <span className='postalCode' property='schema:postalCode'>
-                    94118
+                    08055
                   </span>{' '}
                   <abbr
                     className='addressCountry'
