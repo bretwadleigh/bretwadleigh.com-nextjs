@@ -9,7 +9,7 @@ import { logPageView } from '../utils/analytics'
 export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://bretwadleigh.com/data/wp-json/wp/v2/'
-    const params = 'experience?filter[orderby]=date&order=asc&_embed'
+    const params = 'experience?filter[orderby]=date&order=desc&_embed&per_page=11'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }

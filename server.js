@@ -9,7 +9,7 @@ const handle = app.getRequestHandler()
 let cacheTime = 1000 * 60 * 60 // 1 hour
 
 if (dev) {
-  cacheTime = 100
+  cacheTime = 1
 }
 
 // This is where we cache our rendered HTML pages
@@ -20,7 +20,7 @@ const ssrCache = new LRUCache({
 
 app.prepare().then(() => {
   const server = express()
-
+  //cache.reset()
   // Use the `renderAndCache` utility defined below to serve pages
   server.get('/', (req, res) => {
     renderAndCache(req, res, '/')
@@ -53,14 +53,14 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/single-exp', queryParams)
   })
 
-  server.get('/i/:id', (req, res) => {
-    const queryParams = { id: req.params.id }
-    renderAndCache(req, res, '/pdf-page', queryParams)
-  })
+  //server.get('/i/:id', (req, res) => {
+  //  const queryParams = { id: req.params.id }
+  //  renderAndCache(req, res, '/pdf-page', queryParams)
+  //})
 
-  server.get('/search/*', (req, res) => {
-    renderAndCache(req, res, '/search')
-  })
+  //server.get('/search/*', (req, res) => {
+  //  renderAndCache(req, res, '/search')
+  //})
 
   server.get('*', (req, res) => {
     return handle(req, res)
