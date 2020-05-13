@@ -23,7 +23,7 @@ export default class extends React.Component {
     return (
       <Layout
         headerType='interior'
-        title='Educaton | Bret Wadleigh | Front-End Web Developer'
+        title='Education | Bret Wadleigh | Front-End Web Developer'
         description='Bret Wadleigh&quot;s Education'
       >
         <main id='education'>
