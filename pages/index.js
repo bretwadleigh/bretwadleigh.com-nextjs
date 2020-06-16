@@ -2,11 +2,13 @@ import React from 'react'
 import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
 // import StickyNav from '../components/StickyNav'
-import 'isomorphic-fetch'
+// import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
   static async getInitialProps () {
+    // need to add in case of self-signed certificate connection
+    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
     const apiUrl = 'https://bretwadleigh.com/data/wp-json/wp/v2/'
     const postParams = 'posts?filter[posts_per_page]=2'
     const experienceParams =
@@ -43,8 +45,9 @@ export default class extends React.Component {
                 <div className='row center'>
                   <h5 className='header col s12 light white-text'>
                     <span className='dark-bg'>
-                      &nbsp;Building Applications and Websites&nbsp;<br />using
-                      Javascript and PHP&nbsp;
+                      &nbsp;Building Applications and Websites&nbsp;
+                      <br />
+                      using Javascript and PHP&nbsp;
                     </span>
                   </h5>
                 </div>
