@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
 // import StickyNav from '../components/StickyNav'
-// import 'isomorphic-fetch'
+import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
